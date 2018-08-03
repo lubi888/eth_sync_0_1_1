@@ -2,30 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'secondclass.dart';
 import 'firstclass.dart';
-//import 'firebaseFlutt.dart';
+import 'firebaseFlutt.dart';
 import 'snackbar.dart';
 import 'text_form_field_data.dart';
+//import 'drawer.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 class EthSync extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: "ethSync",
 //      style: new TextStyle(color: Colors.red)),
       theme: new ThemeData(
-        //ThemeData.dark
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.,
-        brightness: Brightness.dark,
         primarySwatch: Colors.orange,
         buttonColor: Colors.red,
         textSelectionColor: Colors.orange,
@@ -107,23 +97,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-//    const String _kAsset0 = '/assets/etceth-asia.jpg';              //'packages/flutter_gallery_assets/shrine/vendors/zach.jpg';
     return new MaterialApp(
       theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console wher/e you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.,
         brightness: Brightness.dark,
         primarySwatch: Colors.yellow,
       ),
@@ -150,27 +125,27 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                },
                 onSelected: selectedTile,
                 itemBuilder: (BuildContext context) =>
-                <PopupMenuEntry<WhyFarther>>[
-                  const PopupMenuItem<WhyFarther>(
-                    value: WhyFarther.harder,
-                    child: const Text('Working a lot harder'),
-                  ),
-                  const PopupMenuItem<WhyFarther>(
-                    value: WhyFarther.smarter,
-                    child: const Text('Being a lot smarter'),
-                  ),
-                  const PopupMenuItem<WhyFarther>(
-                    value: WhyFarther.selfStarter,
-                    child: const Text('Being a self-starter'),
-                  ),
-                  const PopupMenuItem<WhyFarther>(
-                    value: WhyFarther.tradingCharter,
-                    child:
-                    const Text('Placed in charge of trading charter'),
-                  ),
-                  const PopupMenuItem(
-                    child: const Text('whatever'),
-                  )
+                    <PopupMenuEntry<WhyFarther>>[
+                      const PopupMenuItem<WhyFarther>(
+                        value: WhyFarther.harder,
+                        child: const Text('Working a lot harder'),
+                      ),
+                      const PopupMenuItem<WhyFarther>(
+                        value: WhyFarther.smarter,
+                        child: const Text('Being a lot smarter'),
+                      ),
+                      const PopupMenuItem<WhyFarther>(
+                        value: WhyFarther.selfStarter,
+                        child: const Text('Being a self-starter'),
+                      ),
+                      const PopupMenuItem<WhyFarther>(
+                        value: WhyFarther.tradingCharter,
+                        child:
+                            const Text('Placed in charge of trading charter'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('whatever'),
+                      )
 
 //                          child: ListTile(
 //                            leading: Icon(Icons.search, color: getAccentColor()),
@@ -181,8 +156,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                              showSearchDialog();
 //                            },
 //                          )),
-
-                ],
+                    ],
               )
 //              new PopupMenuButton(
 //                //<GridDemoTileStyle>
@@ -211,12 +185,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
               padding: EdgeInsets.zero,
               children: <Widget>[
                 new DrawerHeader(
+
+
 //              currentAccountPicture: const CircleAvatar(
 //                backgroundImage: const AssetImage(
 //                  _kAsset0,
 //                  package: _kGalleryAssetsPackage,
 //                ),
 //              ),
+
+
                   decoration: new BoxDecoration(
                     // child: new Text('Drawer Headder what?'),
                     shape: BoxShape.circle,
@@ -227,21 +205,19 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   ),
                   child: Text('wallet drawer||Widget'),
                 ),
-                new ListTile(
-                    leading: const Icon(Icons.add),
-                    title: new Text('item a 1Photos Barscan'),
-                    onTap: () {
-                      Navigator.pop(context);
-                    }),
+
+//                new ListTile(
+//                    leading: const Icon(Icons.add),
+//                    title: new Text('item a 1Photos Barscan'),
+//                    onTap: () {
+//                      Navigator.pop(
+//                          context); //lose app contro? pops back to prev page?
+//                    }),
+
+
                 new ListTile(
                     leading: const Icon(Icons.android),
-                    title: new Text('itam a 2too'),
-                    //                   onTap: () {
-//                  //_showNotImplementedMessage,
-//                  //update the app and go to link
-//                  Navigator.pop(context);
-//                  //Navigator.of(context).pop();
-                    //                },
+                    title: new Text('itam a 2too - golang'),
                     onTap: () async {
                       const url = 'https://golang.org';
                       if (await canLaunch(url)) {
@@ -254,12 +230,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   leading: const Icon(Icons.backup),
                   title: new Text('Golang link'),
                   onTap: _onGo,
-                  //      new Text('Show Flutter homepage'),
-//                launch('https://github.com/flutter/flutter/issues/new');
                 ),
                 new ListTile(
                     leading: const Icon(Icons.accessibility),
-                    title: new Text('item 4 mvaigator'),
+                    title: new Text('item 4 mvaigator 2nd screen'),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -269,25 +243,25 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.android),
-                    title: new Text('page 5'),
+                    title: new Text('page 5 1st Scre'),
                     onTap: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => new FirstScreen()));
                     }),
-//                new ListTile(
-//                    leading: const Icon(Icons.message),
-//                    title: new Text('firebase chat'),
-//                    onTap: () {
-//                      Navigator.push(
-//                          context,
-//                          MaterialPageRoute(
-//                              builder: (context) => new baby_names()));
-//                    }),
+                new ListTile(
+                    leading: const Icon(Icons.message),
+                    title: new Text('firebase chat'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new BabyNames()));
+                    }),
                 new ListTile(
                     leading: const Icon(Icons.brightness_5),
-                    title: new Text('theme dark'),
+                    title: new Text('theme dark 2nd scre'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -296,7 +270,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.brightness_7),
-                    title: new Text('theme light'),
+                    title: new Text('theme light  2nd scr'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -305,9 +279,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.text_fields),
-                    title: new Text('add data'),
-                    onTap: (){
-                      Navigator.push(context,
+                    title: new Text('add dataForm Text'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
                           MaterialPageRoute(
                               builder: (context) => new TextFormFieldDemo()));
                     }),
@@ -317,27 +292,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
 
           body: new Scrollbar(
             //viewportBuilder: AxisDirection.down,
-            // Center is a layout widget. It takes a single child and positions it
-            // in the middle of the parent.
-
-//            child: new RaisedButton(
-//              onPressed: () {
-//                final snackBar = new SnackBar(
-//                  content: new Text('Yay! A SnackBar!'),
-//                  action: new SnackBarAction(
-//                    label: 'Undo',
-//                    onPressed: () {
-//                      // Some code to undo the change!
-//                    },
-//                  ),
-//                );
-//
-//                // Find the Scaffold in the Widget tree and use it to show a SnackBar!
-//                Scaffold.of(context).showSnackBar(snackBar);
-//              },
-//              child: new Text('Show SnackBar'),
-//            ),
-
             child: new ListView(
               children: <Widget>[
                 new TextField(
@@ -447,7 +401,7 @@ class SnackBar extends StatelessWidget {
     return new MaterialApp(
       title: 'SnackBar Demo',
       theme:
-      new ThemeData(primarySwatch: Colors.red, brightness: Brightness.dark),
+          new ThemeData(primarySwatch: Colors.red, brightness: Brightness.dark),
       home: new Scaffold(
         appBar: new AppBar(
           title: new Text('SnackBar Demo'),

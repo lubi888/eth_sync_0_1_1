@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-//import 'flutter_drawer.dart';
 
 class SnackBarPage extends StatelessWidget {
   void _launchURL2() async {
@@ -18,7 +17,7 @@ class SnackBarPage extends StatelessWidget {
       child: new RaisedButton(
         onPressed: () {
           final snackBar = new SnackBar(
-            content: new Text('Yay! A SnackBar!'),
+            content: new Text('Yay! A big little snackbar!'),
             action: new SnackBarAction(
               label: 'Launch Flutter.io',
               onPressed: () {

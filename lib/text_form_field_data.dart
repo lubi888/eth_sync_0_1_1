@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class TextFormFieldDemo extends StatefulWidget {
-  const TextFormFieldDemo({ Key key }) : super(key: key);
+  const TextFormFieldDemo({Key key}) : super(key: key);
 
   static const String routeName = '/material/text-form-field';
 
@@ -22,19 +22,19 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
   PersonData person = new PersonData();
 
   void showInSnackBar(String value) {
-    _scaffoldKey.currentState.showSnackBar(new SnackBar(
-        content: new Text(value)
-    ));
+    _scaffoldKey.currentState
+        .showSnackBar(new SnackBar(content: new Text(value)));
   }
 
   bool _autovalidate = false;
   bool _formWasEdited = false;
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  final GlobalKey<FormFieldState<String>> _passwordFieldKey = new GlobalKey<FormFieldState<String>>();
+  final GlobalKey<FormFieldState<String>> _passwordFieldKey =
+      new GlobalKey<FormFieldState<String>>();
   void _handleSubmitted() {
     final FormState form = _formKey.currentState;
     if (!form.validate()) {
-      _autovalidate = true;  // Start validating on every change.
+      _autovalidate = true; // Start validating on every change.
       showInSnackBar('Please fix the errors in red before submitting.');
     } else {
       form.save();
@@ -44,8 +44,7 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
 
   String _validateName(String value) {
     _formWasEdited = true;
-    if (value.isEmpty)
-      return 'Name is required.';
+    if (value.isEmpty) return 'Name is required.';
     final RegExp nameExp = new RegExp(r'^[A-za-z ]+$');
     if (!nameExp.hasMatch(value))
       return 'Please enter only alphabetical characters.';
@@ -65,33 +64,36 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
     final FormFieldState<String> passwordField = _passwordFieldKey.currentState;
     if (passwordField.value == null || passwordField.value.isEmpty)
       return 'Please choose a password.';
-    if (passwordField.value != value)
-      return 'Passwords don\'t match';
+    if (passwordField.value != value) return 'Passwords don\'t match';
     return null;
   }
 
   Future<bool> _warnUserAboutInvalidData() async {
     final FormState form = _formKey.currentState;
-    if (form == null || !_formWasEdited || form.validate())
-      return true;
+    if (form == null || !_formWasEdited || form.validate()) return true;
 
     return await showDialog<bool>(
-      context: context,
-      child: new AlertDialog(
-        title: const Text('This form has errors'),
-        content: const Text('Really leave this form?'),
-        actions: <Widget> [
-          new FlatButton(
-            child: const Text('YES'),
-            onPressed: () { Navigator.of(context).pop(true); },
+          context: context,
+          child: new AlertDialog(
+            title: const Text('This form has errors'),
+            content: const Text('Really leave this form?'),
+            actions: <Widget>[
+              new FlatButton(
+                child: const Text('YES'),
+                onPressed: () {
+                  Navigator.of(context).pop(true);
+                },
+              ),
+              new FlatButton(
+                child: const Text('NO'),
+                onPressed: () {
+                  Navigator.of(context).pop(false);
+                },
+              ),
+            ],
           ),
-          new FlatButton(
-            child: const Text('NO'),
-            onPressed: () { Navigator.of(context).pop(false); },
-          ),
-        ],
-      ),
-    ) ?? false;
+        ) ??
+        false;
   }
 
   @override
@@ -114,7 +116,9 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
                   hintText: 'What do people call you?',
                   labelText: 'Name *',
                 ),
-                onSaved: (String value) { person.name = value; },
+                onSaved: (String value) {
+                  person.name = value;
+                },
                 validator: _validateName,
               ),
               new TextFormField(
@@ -124,7 +128,9 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
                   labelText: 'Phone Number *',
                 ),
                 keyboardType: TextInputType.phone,
-                onSaved: (String value) { person.phoneNumber = value; },
+                onSaved: (String value) {
+                  person.phoneNumber = value;
+                },
                 validator: _validatePhoneNumber,
               ),
               new TextFormField(
@@ -145,7 +151,9 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
                         labelText: 'New Password *',
                       ),
                       obscureText: true,
-                      onSaved: (String value) { person.password = value; },
+                      onSaved: (String value) {
+                        person.password = value;
+                      },
                     ),
                   ),
                   const SizedBox(width: 16.0),
@@ -171,11 +179,11 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
               ),
               new Container(
                 padding: const EdgeInsets.only(top: 20.0),
-                child: new Text('* indicates required field', style: Theme.of(context).textTheme.caption),
+                child: new Text('* indicates required field',
+                    style: Theme.of(context).textTheme.caption),
               ),
             ],
-          )
-      ),
+          )),
     );
   }
 }

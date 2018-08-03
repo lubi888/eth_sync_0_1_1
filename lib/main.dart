@@ -4,9 +4,6 @@ import 'eth_sync.dart';
 void main() {
   runApp(new MaterialApp(
     title: 'ethSync',
-//    theme: new ThemeData(
-//      backgroundColor: Colors.blueGrey,
-//    ),
     home: new EthSync(),
   ));
 }
