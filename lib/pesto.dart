@@ -473,7 +473,7 @@ class RecipeSheet extends StatelessWidget {
       fontWeight: FontWeight.bold,
       color: Colors.orangeAccent,
       height: 24.0 / 15.0); //height: 24.0/15.0);
-  
+
   RecipeSheet({Key key, this.recipe}) : super(key: key);
 
   final Recipe recipe;

@@ -9,6 +9,10 @@ import 'pesto.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
+const String words5 =
+    "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000 "
+    "\n\u4DC1 \tyijing i ching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
+
 class EthSync extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -129,7 +133,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             const Text('Placed in charge of trading charter'),
                       ),
                       const PopupMenuItem(
-                        child: const Text('whatever'),
+                        child: const Text('whatever '),
                       )
                     ],
               )
@@ -316,6 +320,30 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 new RaisedButton(
                   onPressed: _showSnackBox,
                   child: new Text('Show snackbox homepage'),
+                ),
+                new Container(
+                  child: new Column(
+                    children: <Widget>[
+                      new Text(
+                        "aegyptus",
+                      ),
+                      new Text(
+                        words5,
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontFamily: "Aegyptus", //"bln" "iching",
+                          fontSize: 25.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                  margin: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: new BoxDecoration(
+                    color: Colors.yellow.shade500,
+                    borderRadius:
+                        new BorderRadius.all(new Radius.circular(5.0)),
+                  ),
                 ),
               ],
             ),
