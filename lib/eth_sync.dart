@@ -6,6 +6,8 @@ import 'firebaseFlutt.dart';
 import 'snackbar.dart';
 import 'text_form_field_data.dart';
 import 'pesto.dart';
+import 'drawer_demo.dart';
+
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -256,6 +258,15 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       image: new AssetImage(_kAsset3),
                     ),
                   ),
+                ),
+                new RaisedButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) => new DrawerDemo()),
+                    );
+                  },
+                  child: new Text('Show drawer demo , sidebar'),
                 ),
                 new Container(
                   width: 150.0,
