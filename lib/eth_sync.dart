@@ -5,7 +5,7 @@ import 'firstclass.dart';
 import 'firebaseFlutt.dart';
 import 'snackbar.dart';
 import 'text_form_field_data.dart';
-//import 'drawer.dart';
+import 'pesto.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -20,27 +20,16 @@ class EthSync extends StatelessWidget {
         buttonColor: Colors.red,
         textSelectionColor: Colors.orange,
         //primaryTextTheme: Colors.green,
-        //primaryTextTheme: Colors.green,
         //fontFamily: FontStyle.italic,
         //buttonTheme: TextDecorationStyle.dotted,
       ),
-      home: new EthSyncPage(), //title: 'Flutter ttttt Demo Home Page'),
-      // home: new FirstScreen(),
+      home: new EthSyncPage(),
     );
   }
 }
 
 class EthSyncPage extends StatefulWidget {
   EthSyncPage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -49,12 +38,8 @@ class EthSyncPage extends StatefulWidget {
 }
 
 class _EthSyncPageState extends State<EthSyncPage> {
-  //int _counter = 0;
-
-  String _kAsset0 =
-      'assets/etceth-asia.jpg'; //'packages/flutter_gallery_assets/shrine/vendors/zach.jpg';
-  String _kAsset1 =
-      'assets/ethBullet.png'; //'packages/flutter_gallery_assets/shrine/vendors/16c477b.jpg';
+  String _kAsset0 = 'assets/etceth-asia.jpg';
+  String _kAsset1 = 'assets/ethBullet.png';
   String _kAsset2 = 'assets/etcBullet.png';
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
@@ -146,37 +131,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       const PopupMenuItem(
                         child: const Text('whatever'),
                       )
-
-//                          child: ListTile(
-//                            leading: Icon(Icons.search, color: getAccentColor()),
-//                            title:
-//                            Text(SEARCH, style: TextStyle(color: getAccentColor())),
-//                            onTap: () {
-//                              Navigator.of(context).pop();
-//                              showSearchDialog();
-//                            },
-//                          )),
                     ],
               )
-//              new PopupMenuButton(
-//                //<GridDemoTileStyle>
-//                //onSelected: changeDemoStyle,
-//                //itemBuilder: (BuildContext context) => <PopupMenuItem<GridDemoTileStyle>>[
-//                itemBuilder: (BuildContext context) => <PopupMenuItem>[
-//                      const PopupMenuItem(
-//                          //value: TabsDemoStyle.iconsAndText,
-//                          child: const Text('Icons and text')),
-//                      const PopupMenuItem(
-//                          //value: TabsDemoStyle.iconsOnly,
-//                          child: const Text('Icons only')),
-//                      const PopupMenuItem(
-//                          //value: TabsDemoStyle.textOnly,
-//                          child: const Text('Text only')),
-//                      const CheckedPopupMenuItem(
-//                        child: const Text('checked'),
-//                      ),
-//                    ],
-//              ),
             ],
           ), //
           drawer: new Drawer(
@@ -185,18 +141,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
               padding: EdgeInsets.zero,
               children: <Widget>[
                 new DrawerHeader(
-
-
-//              currentAccountPicture: const CircleAvatar(
-//                backgroundImage: const AssetImage(
-//                  _kAsset0,
-//                  package: _kGalleryAssetsPackage,
-//                ),
-//              ),
-
-
                   decoration: new BoxDecoration(
-                    // child: new Text('Drawer Headder what?'),
                     shape: BoxShape.circle,
                     color: Colors.green,
                     image: new DecorationImage(
@@ -205,26 +150,15 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   ),
                   child: Text('wallet drawer||Widget'),
                 ),
-
-//                new ListTile(
-//                    leading: const Icon(Icons.add),
-//                    title: new Text('item a 1Photos Barscan'),
-//                    onTap: () {
-//                      Navigator.pop(
-//                          context); //lose app contro? pops back to prev page?
-//                    }),
-
-
                 new ListTile(
                     leading: const Icon(Icons.android),
-                    title: new Text('itam a 2too - golang'),
+                    title: new Text('itam a 2too - ethSyc recip pesto'),
                     onTap: () async {
-                      const url = 'https://golang.org';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new Pesto()),
+                      );
                     }),
                 new ListTile(
                   leading: const Icon(Icons.backup),
@@ -300,6 +234,15 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     hintText: ("try some search?"),
                   ),
                 ),
+                new RaisedButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) => new Pesto()),
+                    );
+                  },
+                  child: new Text('Show pestoEthSync receipie homepage'),
+                ),
                 new Container(
                   width: 300.0,
                   height: 300.0,
@@ -346,12 +289,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 ),
                 new Padding(
                   padding: const EdgeInsets.only(top: 8.0),
-//                child: new Text('Tap here to open the drawer\Check balances\nCopy addresses'
-//                    '\n\n\nUse Firebase for OAuth &&||syncing?',
-//                  style: Theme.of(context).textTheme.subhead,
-//                ),
                   child: new Image.network(
-//                  onPressed: _launchURL,
                     'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
                   ),
                 ),
@@ -382,7 +320,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
               ],
             ),
           ),
-//// This trailing   comma makes auto-formatting nicer for build methods.
         ),
       ),
     );
