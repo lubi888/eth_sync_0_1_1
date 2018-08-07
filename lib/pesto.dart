@@ -20,7 +20,7 @@ const double _kAppBarHeight = 128.0;
 const double _kFabHalfSize =
     28.0; // TODO(mpcomplete): needs to adapt to screen size
 const double _kRecipePageMaxWidth = 500.0;
-const String hiero = "\U{00013004}"; //try these new unicode
+const String hiero = "\u{013080}"; //try these new unicode
 const String u = "\\U(00013000)";
 //const String p = '\u00013000';   //          00013000';
 const String uni = '\u1300';
@@ -712,7 +712,7 @@ const List<Recipe> kPestoRecipes = const <Recipe>[
   ),
   const Recipe(
     //keep checking Unicode
-    name: 'Lets Roast \u1300',
+    name: 'Lets Roast \u1300 $hiero',
     author: 'terminator',
     ingredientsImagePath: 'assets/logoCli.png',
     description: 'Clear writing instructions\nshort and poignant.\n',

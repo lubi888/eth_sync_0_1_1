@@ -7,6 +7,7 @@ import 'snackbar.dart';
 import 'text_form_field_data.dart';
 import 'pesto.dart';
 import 'drawer_demo.dart';
+import 'grid_list.dart';
 
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
@@ -249,6 +250,15 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   },
                   child: new Text('Show pestoEthSync receipie homepage'),
                 ),
+                new RaisedButton(
+                  onPressed: () async {
+                    Navigator.push(
+                      context,
+                      new MaterialPageRoute(builder: (context) => new GridListDemo()),
+                    );
+                  },
+                  child: new Text('Show grid photos homepage'),
+                ),
                 new Container(
                   width: 300.0,
                   height: 300.0,
@@ -341,10 +351,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       new Text(
                         words5,
                         textAlign: TextAlign.center,
-                        style: new TextStyle(
-                          fontFamily: "Aegyptus", //"bln" "iching",
-                          fontSize: 25.0,
-                        ),
+//                        style: new TextStyle(
+//                          fontFamily: "Aegyptus", //"bln" "iching",
+//                          fontSize: 25.0,
+//                        ),
                       ),
                     ],
                   ),
