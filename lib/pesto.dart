@@ -22,7 +22,6 @@ const double _kFabHalfSize =
 const double _kRecipePageMaxWidth = 500.0;
 const String hiero = "\u{013080}"; //try these new unicode
 const String u = "\\U(00013000)";
-//const String p = '\u00013000';   //          00013000';
 const String uni = '\u1300';
 
 final Set<Recipe> _favoriteRecipes = new Set<Recipe>();
@@ -253,7 +252,7 @@ class _PestoLogoState extends State<PestoLogo> {
                 rect: _textRectTween.lerp(widget.t),
                 child: new Opacity(
                   opacity: _textOpacity.transform(widget.t),
-                  child: new Text('PESTO',
+                  child: new Text('ethSync',
                       style: titleStyle, textAlign: TextAlign.center),
                 ),
               ),

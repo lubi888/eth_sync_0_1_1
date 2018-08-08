@@ -9,7 +9,6 @@ import 'pesto.dart';
 import 'drawer_demo.dart';
 import 'grid_list.dart';
 
-
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 const String words5 =
@@ -50,7 +49,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
   String _kAsset2 = 'assets/etcBullet.png';
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
-
   String bm = 'bite me now';
 
 //  void _incrementCounter() {
@@ -158,39 +156,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   child: Text('wallet drawer||Widget'),
                 ),
                 new ListTile(
-                    leading: const Icon(Icons.android),
-                    title: new Text('itam a 2too - ethSyc recip pesto'),
-                    onTap: () async {
-                      Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => new Pesto()),
-                      );
-                    }),
-                new ListTile(
                   leading: const Icon(Icons.backup),
                   title: new Text('Golang link'),
                   onTap: _onGo,
                 ),
-                new ListTile(
-                    leading: const Icon(Icons.accessibility),
-                    title: new Text('item 4 mvaigator 2nd screen'),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => new SecondScreen()),
-                      );
-                    }),
-                new ListTile(
-                    leading: const Icon(Icons.android),
-                    title: new Text('page 5 1st Scre'),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => new FirstScreen()));
-                    }),
                 new ListTile(
                     leading: const Icon(Icons.message),
                     title: new Text('firebase chat'),
@@ -199,6 +168,48 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => new BabyNames()));
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.brightness_7),
+                    title: new Text('begin learning ethSync'),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => new Pesto()));
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.brightness_7),
+                    title: new Text('add eth|etc address - acccount'),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => new DrawerDemo()));
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.android),
+                    title: new Text('photos grid list view'),
+                    onTap: () async {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new GridListDemo()),
+                      );
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.text_fields),
+                    title: new Text('add data: Name, email'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new TextFormFieldDemo()));
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.android),
+                    title: new Text('1st Screen'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new FirstScreen()));
                     }),
                 new ListTile(
                     leading: const Icon(Icons.brightness_5),
@@ -210,22 +221,44 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new SecondScreen()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.brightness_7),
-                    title: new Text('theme light  2nd scr'),
+                    leading: const Icon(Icons.accessibility),
+                    title: new Text('item 4 mvaigator 2nd screen'),
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => new SecondScreen()));
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new SecondScreen()),
+                      );
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.text_fields),
-                    title: new Text('add dataForm Text'),
+                    leading: const Icon(Icons.accessibility),
+                    title: new Text('item 4 mvaigator 2nd screen'),
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => new TextFormFieldDemo()));
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new SecondScreen()),
+                      );
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.accessibility),
+                    title: new Text('item 4 mvaigator 2nd screen'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new SecondScreen()),
+                      );
+                    }),
+                new ListTile(
+                    leading: const Icon(Icons.accessibility),
+                    title: new Text('item 4 mvaigator 2nd screen'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new SecondScreen()),
+                      );
                     }),
               ],
             ),
@@ -254,7 +287,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   onPressed: () async {
                     Navigator.push(
                       context,
-                      new MaterialPageRoute(builder: (context) => new GridListDemo()),
+                      new MaterialPageRoute(
+                          builder: (context) => new GridListDemo()),
                     );
                   },
                   child: new Text('Show grid photos homepage'),
@@ -273,7 +307,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   onPressed: () async {
                     Navigator.push(
                       context,
-                      new MaterialPageRoute(builder: (context) => new DrawerDemo()),
+                      new MaterialPageRoute(
+                          builder: (context) => new DrawerDemo()),
                     );
                   },
                   child: new Text('Show drawer demo , sidebar'),
