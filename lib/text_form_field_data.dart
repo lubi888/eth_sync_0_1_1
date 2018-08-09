@@ -1,5 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+String sampEthAddSmall = "0x281055afc982d96fab";
+String sampEthAdd = "0x281055afc982d96fab65b3a49cac8b878184cb16";
+
 
 class TextFormFieldDemo extends StatefulWidget {
   const TextFormFieldDemo({Key key}) : super(key: key);
@@ -14,6 +19,7 @@ class PersonData {
   String name = '';
   String phoneNumber = '';
   String password = '';
+  String ethAddress = '';
 }
 
 class TextFormFieldDemoState extends State<TextFormFieldDemo> {
@@ -38,7 +44,8 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
       showInSnackBar('Please fix the errors in red before submitting.');
     } else {
       form.save();
-      showInSnackBar('${person.name}\'s phone number is ${person.phoneNumber}');
+      showInSnackBar('${person.name}\'s phone number is ${person.phoneNumber}'
+          '\n and eth add = ${person.ethAddress}');
     }
   }
 
@@ -56,6 +63,14 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
     final RegExp phoneExp = new RegExp(r'^\d\d\d-\d\d\d\-\d\d\d\d$');
     if (!phoneExp.hasMatch(value))
       return '###-###-#### - Please enter a valid phone number.';
+    return null;
+  }
+
+  String _validateEthAddr(String value) {
+    _formWasEdited = true;
+    final RegExp ethAddExt = new RegExp(r'0x[a-fA-F0-9]{40}');
+    if (!ethAddExt.hasMatch(value))
+      return 'wrong input. sampeth:$sampEthAddSmall';
     return null;
   }
 
@@ -124,8 +139,10 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
               new TextFormField(
                 decoration: const InputDecoration(
                   icon: const Icon(Icons.phone),
-                  hintText: 'Where can we reach you?',
+//                  hintText: 'Where can we reach you? 555-555-5555',
                   labelText: 'Phone Number *',
+//                  prefixText: '555-555-555',  //& then shows hintText
+                  helperText: '0x281055afc982d96fab65b3a49cac8b878184cb16',  //underneath
                 ),
                 keyboardType: TextInputType.phone,
                 onSaved: (String value) {
@@ -135,7 +152,29 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
               ),
               new TextFormField(
                 decoration: const InputDecoration(
-                  hintText: 'Tell us about yourself',
+                  icon: const Icon(Icons.security),
+                  hintText: 'eths addr?? 0x281055afc982d96fab65b3a49cac8b878184cb16',
+//                  prefixText: '0x281055afc982d96fab65b3a49cac8b878184cb16',
+                ),
+                keyboardType: TextInputType.text,   //necessary?
+                onSaved: (String value) {
+                  person.ethAddress = value;
+                },
+                validator: _validateEthAddr,
+              ),
+//              new Text("\n\ntry something like this:"
+//                  "\n\n 0x281055afc982d96fab65b3a49cac8b878184cb16"),
+              new GestureDetector(
+                child: new Text('\n\n $sampEthAdd'),
+                onLongPress: () {
+                  Clipboard.setData(new ClipboardData(text: sampEthAdd));
+//                  key.currentState.showSnackBar(
+//                      new SnackBar(content: new Text("Copied to Clipboard"),));
+                }
+              ),
+              new TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Tell us about yourself \n0x281055afc982d96fab65b3a49cac8b878184cb16',
                   labelText: 'Life story',
                 ),
                 maxLines: 3,

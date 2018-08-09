@@ -8,6 +8,7 @@ import 'text_form_field_data.dart';
 import 'pesto.dart';
 import 'drawer_demo.dart';
 import 'grid_list.dart';
+import 'qr_ethsync.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -197,7 +198,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.text_fields),
-                    title: new Text('add data: Name, email'),
+                    title: new Text('add data: Name, email, ethAddress'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -277,6 +278,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         //border: InputBorder.none,
                         hintText: ("try some search?"),
                       ),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new MainScreen()),
+                        );
+                      },
+                      child: new Text('Show QR help'),
                     ),
                     new RaisedButton(
                       onPressed: () async {
