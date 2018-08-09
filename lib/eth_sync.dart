@@ -12,7 +12,7 @@ import 'grid_list.dart';
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 const String words5 =
-    "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000 "
+    "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000"
     "\n\u4DC1 \tyijing i ching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
 
 class EthSync extends StatelessWidget {
@@ -180,8 +180,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     leading: const Icon(Icons.brightness_7),
                     title: new Text('add eth|etc address - acccount'),
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => new DrawerDemo()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new DrawerDemo()));
                     }),
                 new ListTile(
                     leading: const Icon(Icons.android),
@@ -264,145 +266,152 @@ class _EthSyncPageState extends State<EthSyncPage> {
             ),
           ),
 
-          body: new Scrollbar(
-            //viewportBuilder: AxisDirection.down,
-            child: new ListView(
-              children: <Widget>[
-                new TextField(
-                  decoration: new InputDecoration(
-                    //border: InputBorder.none,
-                    hintText: ("try some search?"),
-                  ),
-                ),
-                new RaisedButton(
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      new MaterialPageRoute(builder: (context) => new Pesto()),
-                    );
-                  },
-                  child: new Text('Show pestoEthSync receipie homepage'),
-                ),
-                new RaisedButton(
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      new MaterialPageRoute(
-                          builder: (context) => new GridListDemo()),
-                    );
-                  },
-                  child: new Text('Show grid photos homepage'),
-                ),
-                new Container(
-                  width: 300.0,
-                  height: 300.0,
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    image: new DecorationImage(
-                      image: new AssetImage(_kAsset3),
-                    ),
-                  ),
-                ),
-                new RaisedButton(
-                  onPressed: () async {
-                    Navigator.push(
-                      context,
-                      new MaterialPageRoute(
-                          builder: (context) => new DrawerDemo()),
-                    );
-                  },
-                  child: new Text('Show drawer demo , sidebar'),
-                ),
-                new Container(
-                  width: 150.0,
-                  height: 150.0,
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: new DecorationImage(
-                      image: new AssetImage(_kAsset0),
-                    ),
-                  ),
-                ),
-                new Text("bite me"),
-                new Text(
-                  bm,
-                ),
-                new RaisedButton(
-                  onPressed: _launchURL,
-                  child: new Text('Show FlutterDarts homepage'),
-                ),
-                new TextField(
-                  decoration: new InputDecoration(
-                    //border: InputBorder.none,
-                    hintText: ("try some search?"),
-                  ),
-                ),
-                new Container(
-                  width: 150.0,
-                  height: 150.0,
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: new DecorationImage(
-                      image: new AssetImage(_kAsset1),
-                    ),
-                  ),
-                ),
-                new Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
-                  child: new Image.network(
-                    'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
-                  ),
-                ),
-                new Container(
-                  width: 300.0,
-                  height: 300.0,
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    image: new DecorationImage(
-                      image: new AssetImage(_kAsset3),
-                    ),
-                  ),
-                ),
-                new Container(
-                  width: 100.0,
-                  height: 100.0,
-                  decoration: new BoxDecoration(
-                    shape: BoxShape.rectangle,
-                    image: new DecorationImage(
-                      image: new AssetImage(_kAsset4),
-                    ),
-                  ),
-                ),
-                new RaisedButton(
-                  onPressed: _showSnackBox,
-                  child: new Text('Show snackbox homepage'),
-                ),
-                new Container(
-                  child: new Column(
-                    children: <Widget>[
-                      new Text(
-                        "aegyptus",
+          body: TabBarView(
+            children: [
+              new Scrollbar(
+                //viewportBuilder: AxisDirection.down,
+                child: new ListView(
+                  children: <Widget>[
+                    new TextField(
+                      decoration: new InputDecoration(
+                        //border: InputBorder.none,
+                        hintText: ("try some search?"),
                       ),
-                      new Text(
-                        words5,
-                        textAlign: TextAlign.center,
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new Pesto()),
+                        );
+                      },
+                      child: new Text('Show pestoEthSync receipie homepage'),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new GridListDemo()),
+                        );
+                      },
+                      child: new Text('Show grid photos homepage'),
+                    ),
+                    new Container(
+                      width: 300.0,
+                      height: 300.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset3),
+                        ),
+                      ),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new DrawerDemo()),
+                        );
+                      },
+                      child: new Text('Show drawer demo , sidebar'),
+                    ),
+                    new Container(
+                      width: 150.0,
+                      height: 150.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset0),
+                        ),
+                      ),
+                    ),
+                    new Text("bite me"),
+                    new Text(
+                      bm,
+                    ),
+                    new RaisedButton(
+                      onPressed: _launchURL,
+                      child: new Text('Show FlutterDarts homepage'),
+                    ),
+                    new TextField(
+                      decoration: new InputDecoration(
+                        //border: InputBorder.none,
+                        hintText: ("try some search?"),
+                      ),
+                    ),
+                    new Container(
+                      width: 150.0,
+                      height: 150.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset1),
+                        ),
+                      ),
+                    ),
+                    new Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: new Image.network(
+                        'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                      ),
+                    ),
+                    new Container(
+                      width: 300.0,
+                      height: 300.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset3),
+                        ),
+                      ),
+                    ),
+                    new Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset4),
+                        ),
+                      ),
+                    ),
+                    new RaisedButton(
+                      onPressed: _showSnackBox,
+                      child: new Text('Show snackbox homepage'),
+                    ),
+                    new Container(
+                      child: new Column(
+                        children: <Widget>[
+                          new Text(
+                            "aegyptus",
+                          ),
+                          new Text(
+                            words5,
+                            textAlign: TextAlign.center,
 //                        style: new TextStyle(
 //                          fontFamily: "Aegyptus", //"bln" "iching",
 //                          fontSize: 25.0,
 //                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  margin: const EdgeInsets.all(10.0),
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: new BoxDecoration(
-                    color: Colors.yellow.shade500,
-                    borderRadius:
-                        new BorderRadius.all(new Radius.circular(5.0)),
-                  ),
+                      margin: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: new BoxDecoration(
+                        color: Colors.yellow.shade500,
+                        borderRadius:
+                            new BorderRadius.all(new Radius.circular(5.0)),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              Icon(Icons.directions_railway),
+              Icon(Icons.search),
+            ],
           ),
         ),
       ),
