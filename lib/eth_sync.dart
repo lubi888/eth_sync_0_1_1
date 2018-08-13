@@ -9,6 +9,9 @@ import 'pesto.dart';
 import 'drawer_demo.dart';
 import 'grid_list.dart';
 import 'qr_ethsync.dart';
+import 'qr_mobile.dart';
+import 'package:fast_qr_reader_view/fast_qr_reader_view.dart';
+
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -31,6 +34,7 @@ class EthSync extends StatelessWidget {
         //buttonTheme: TextDecorationStyle.dotted,
       ),
       home: new EthSyncPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -131,8 +135,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.tradingCharter,
-                        child:
-                            const Text('Placed in charge of trading charter'),
+                        child: const Text('Placed in charge of trading charter'),
                       ),
                       const PopupMenuItem(
                         child: const Text('whatever '),
@@ -289,6 +292,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       },
                       child: new Text('Show QR help'),
                     ),
+//                    new RaisedButton(
+//                      onPressed: () async {
+//                        Navigator.push(
+//                          context,
+//                          new MaterialPageRoute(
+//                              builder: (context) => new MyApp()),
+//                        );
+//                      },
+//                      child: new Text('Show QR Google Mobile vision'),
+//                    ),
                     new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
@@ -363,11 +376,12 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         ),
                       ),
                     ),
-                    new Padding(
+                    new FlatButton(
                       padding: const EdgeInsets.only(top: 8.0),
                       child: new Image.network(
                         'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
                       ),
+                      onPressed: _launchURL,
                     ),
                     new Container(
                       width: 300.0,
@@ -421,7 +435,32 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 ),
               ),
               Icon(Icons.directions_railway),
-              Icon(Icons.search),
+//              Icon(Icons.search),
+              new Container(
+                child: new Column(
+                  children: <Widget>[
+                    new Text(
+                      "aegyptus",
+                    ),
+                    new Text(
+                      words5,
+                      textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontFamily: "Aegyptus", //"bln" "iching",
+                          fontSize: 25.0,
+                          color: Colors.redAccent.shade200,
+                        ),
+                    ),
+                  ],
+                ),
+                margin: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
+                decoration: new BoxDecoration(
+                  color: Colors.yellow.shade500,
+                  borderRadius:
+                  new BorderRadius.all(new Radius.circular(50.0)),
+                ),
+              ),
             ],
           ),
         ),

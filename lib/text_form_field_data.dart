@@ -68,8 +68,8 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
 
   String _validateEthAddr(String value) {
     _formWasEdited = true;
-    final RegExp ethAddExt = new RegExp(r'0x[a-fA-F0-9]{40}');
-    if (!ethAddExt.hasMatch(value))
+    final RegExp ethAddExp = new RegExp(r'0x[a-fA-F0-9]{40}');
+    if (!ethAddExp.hasMatch(value))
       return 'wrong input. sampeth:$sampEthAddSmall';
     return null;
   }

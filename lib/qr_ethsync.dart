@@ -76,15 +76,25 @@ class _MainScreenState extends State<MainScreen> {
           ),
           new Expanded(
             child: new Center(
-              child: new QrImage(
-                data: _dataString,
-                onError: (ex) {
-                  print("[QR] ERROR - $ex");
-                  setState(() {
-                    _inputErrorText =
-                    "Error! Maybe your input value is too long?";
-                  });
-                },
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+//                    child: new QrImage(
+//                      data: _dataString,
+//                      onError: (ex) {
+//                        print("[QR] ERROR - $ex");
+//                        setState(() {
+//                          _inputErrorText =
+//                          "Error! Maybe your input value is too long?";
+//                        });
+//                      },
+//                    ),
+                    child: new QrImage(
+                      data: "0x12341234123412341234",
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
