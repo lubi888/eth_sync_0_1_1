@@ -12,7 +12,6 @@ import 'qr_ethsync.dart';
 import 'qr_mobile.dart';
 import 'package:fast_qr_reader_view/fast_qr_reader_view.dart';
 
-
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 const String words5 =
@@ -123,7 +122,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     <PopupMenuEntry<WhyFarther>>[
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.harder,
-                        child: const Text('Working a lot harder'),
+                        child: const Text('enum, Working a lot harder'),
                       ),
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.smarter,
@@ -135,11 +134,75 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       const PopupMenuItem<WhyFarther>(
                         value: WhyFarther.tradingCharter,
-                        child: const Text('Placed in charge of trading charter'),
+                        child:
+                            const Text('Placed in charge of trading charter'),
                       ),
                       const PopupMenuItem(
-                        child: const Text('whatever '),
-                      )
+                        child: const Text('--------------'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('app Home Page'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('ethSync website'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('---------------'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Settings'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Theme Light'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Theme Dark'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('---------------'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('About'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Contact'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Report Errors & Bugs'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('---------------'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('English'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('French : Francais : FR'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('German : Deutsch : DE'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Italian : Italiano : IT'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Spanish : Espanol : ES'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Japanese : Nihongo : JP'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Chinese : Mandarin : CN-north'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('Chinese : Cantonese : CN-south'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('--------------'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('--------------'),
+                      ),
                     ],
               )
             ],
@@ -160,12 +223,12 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   child: Text('wallet drawer||Widget'),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.backup),
+                  leading: const Icon(Icons.launch),
                   title: new Text('Golang link'),
                   onTap: _onGo,
                 ),
                 new ListTile(
-                    leading: const Icon(Icons.message),
+                    leading: const Icon(Icons.face),
                     title: new Text('firebase chat'),
                     onTap: () {
                       Navigator.push(
@@ -174,14 +237,14 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new BabyNames()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.brightness_7),
+                    leading: const Icon(Icons.bookmark),
                     title: new Text('begin learning ethSync'),
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => new Pesto()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.brightness_7),
+                    leading: const Icon(Icons.account_balance),
                     title: new Text('add eth|etc address - acccount'),
                     onTap: () {
                       Navigator.push(
@@ -190,8 +253,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new DrawerDemo()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.android),
-                    title: new Text('photos grid list view'),
+                    leading: const Icon(Icons.photo_library),
+                    title: new Text('photos grid list view, photo library'),
                     onTap: () async {
                       Navigator.push(
                         context,
@@ -200,8 +263,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       );
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.text_fields),
-                    title: new Text('add data: Name, email, ethAddress'),
+                    leading: const Icon(Icons.person_outline),
+                    title:
+                        new Text('register, add data: Name, email, ethAddress'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -210,7 +274,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.android),
-                    title: new Text('1st Screen'),
+                    title: new Text('1st page'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -218,8 +282,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new FirstScreen()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.brightness_5),
-                    title: new Text('theme dark 2nd scre'),
+                    leading: const Icon(Icons.android),
+                    title: new Text('2nd page'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -228,7 +292,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.accessibility),
-                    title: new Text('item 4 mvaigator 2nd screen'),
+                    title: new Text('navigator x screen'),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -238,7 +302,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.accessibility),
-                    title: new Text('item 4 mvaigator 2nd screen'),
+                    title: new Text('navigator x screen'),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -248,7 +312,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.accessibility),
-                    title: new Text('item 4 mvaigator 2nd screen'),
+                    title: new Text('navigator x screen'),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -258,7 +322,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.accessibility),
-                    title: new Text('item 4 mvaigator 2nd screen'),
+                    title: new Text('navigator x screen'),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -445,11 +509,11 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     new Text(
                       words5,
                       textAlign: TextAlign.center,
-                        style: new TextStyle(
-                          fontFamily: "Aegyptus", //"bln" "iching",
-                          fontSize: 25.0,
-                          color: Colors.redAccent.shade200,
-                        ),
+                      style: new TextStyle(
+                        fontFamily: "Aegyptus", //"bln" "iching",
+                        fontSize: 25.0,
+                        color: Colors.redAccent.shade200,
+                      ),
                     ),
                   ],
                 ),
@@ -457,8 +521,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 padding: const EdgeInsets.all(10.0),
                 decoration: new BoxDecoration(
                   color: Colors.yellow.shade500,
-                  borderRadius:
-                  new BorderRadius.all(new Radius.circular(50.0)),
+                  borderRadius: new BorderRadius.all(new Radius.circular(50.0)),
                 ),
               ),
             ],
