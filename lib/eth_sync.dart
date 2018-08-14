@@ -75,8 +75,17 @@ class _EthSyncPageState extends State<EthSyncPage> {
     }
   }
 
-  void _onGo() async {
-    const url = 'https://golang.org';
+  void _onEthWeb() async {
+    const url = 'https://ethereum.org/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void _onLubiEthWeb() async {
+    const url = 'https://linuxubiuitous.com/ethsync';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -224,8 +233,13 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 ),
                 new ListTile(
                   leading: const Icon(Icons.launch),
-                  title: new Text('Golang link'),
-                  onTap: _onGo,
+                  title: new Text('Etherum website'),
+                  onTap: _onEthWeb,
+                ),
+                new ListTile(
+                  leading: const Icon(Icons.launch),
+                  title: new Text('linuxUbiquitous.com/ethSync'),
+                  onTap: _onLubiEthWeb,
                 ),
                 new ListTile(
                     leading: const Icon(Icons.face),
@@ -237,7 +251,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new BabyNames()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.bookmark),
+                    leading: const Icon(Icons.school),
                     title: new Text('begin learning ethSync'),
                     onTap: () {
                       Navigator.push(context,

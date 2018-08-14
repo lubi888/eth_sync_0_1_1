@@ -15,7 +15,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="eth_sync_0_1_1"
+        android:label="ethSync"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
