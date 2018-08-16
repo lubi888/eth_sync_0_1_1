@@ -238,12 +238,26 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 ),
                 new ListTile(
                   leading: const Icon(Icons.launch),
-                  title: new Text('linuxUbiquitous.com/ethSync'),
+                  title: new Text('ethSync.com'),
                   onTap: _onLubiEthWeb,
                 ),
                 new ListTile(
-                    leading: const Icon(Icons.face),
-                    title: new Text('firebase chat'),
+                    leading: const Icon(Icons.face,
+                    color: Colors.yellowAccent,
+                    ),
+                    title: new Text('firebase chat',
+                    style: TextStyle(
+                      color: Colors.greenAccent
+                    ),
+                    ),
+                    subtitle: new Text(
+                      'experimental firebase hookup',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic, color: Colors.yellowAccent),
+                    ),
+                    trailing: const Icon(Icons.mail,
+                    color: Colors.greenAccent,
+                    ),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -251,15 +265,39 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new BabyNames()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.school),
-                    title: new Text('begin learning ethSync'),
+                    leading: const Icon(Icons.school,
+                      color: Colors.orangeAccent,
+                    ),
+                    title: new Text('begin learning ethSync',
+                        style: TextStyle(
+                            color: Colors.orangeAccent)),
+
+                    subtitle: new Text(
+                      'proof of work||stake',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic, color: Colors.blueAccent),
+                    ),
+                    trailing: const Icon(Icons.mail,
+                      color: Colors.blueAccent,
+                    ),
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => new Pesto()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.account_balance),
-                    title: new Text('add eth|etc address - acccount'),
+                    leading: const Icon(Icons.account_balance,
+                    color: Colors.redAccent,),
+                    title: new Text('add eth|etc address - acccount',
+                    style: new TextStyle(color: Colors.purpleAccent),
+                    ),
+                    subtitle: new Text(
+                      'personal firebase storage',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic, color: Colors.redAccent),
+                    ),
+                    trailing: const Icon(Icons.person_add,
+                    color: Colors.purpleAccent
+                    ),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -370,16 +408,20 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       },
                       child: new Text('Show QR help'),
                     ),
-//                    new RaisedButton(
-//                      onPressed: () async {
-//                        Navigator.push(
-//                          context,
-//                          new MaterialPageRoute(
-//                              builder: (context) => new MyApp()),
-//                        );
-//                      },
-//                      child: new Text('Show QR Google Mobile vision'),
-//                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new CameraApp()),
+//                            he following NoSuchMethodError was thrown building Builder:
+//                        I/flutter (17355): The method '[]' was called on null.
+//                        I/flutter (17355): Receiver: null
+//                        I/flutter (17355): Tried calling: [](0)
+                        );
+                      },
+                      child: new Text('Show QR Google Mobile vision'),
+                    ),
                     new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
