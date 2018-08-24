@@ -150,7 +150,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         child: const Text('--------------'),
                       ),
                       const PopupMenuItem(
-                        child: const Text('app Home Page'),
+                        child: const Text('Home'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('ethereum reddit'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('ethereum website'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('ethereum gitter'),
                       ),
                       const PopupMenuItem(
                         child: const Text('ethSync website'),
@@ -183,7 +192,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         child: const Text('---------------'),
                       ),
                       const PopupMenuItem(
-                        child: const Text('English'),
+                        child: const Text('English: EN'),
                       ),
                       const PopupMenuItem(
                         child: const Text('French : Francais : FR'),
@@ -242,21 +251,23 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   onTap: _onLubiEthWeb,
                 ),
                 new ListTile(
-                    leading: const Icon(Icons.face,
-                    color: Colors.yellowAccent,
+                    leading: const Icon(
+                      Icons.face,
+                      color: Colors.yellowAccent,
                     ),
-                    title: new Text('firebase chat',
-                    style: TextStyle(
-                      color: Colors.greenAccent
-                    ),
+                    title: new Text(
+                      'firebase chat',
+                      style: TextStyle(color: Colors.greenAccent),
                     ),
                     subtitle: new Text(
                       'experimental firebase hookup',
                       style: new TextStyle(
-                          fontStyle: FontStyle.italic, color: Colors.yellowAccent),
+                          fontStyle: FontStyle.italic,
+                          color: Colors.yellowAccent),
                     ),
-                    trailing: const Icon(Icons.mail,
-                    color: Colors.greenAccent,
+                    trailing: const Icon(
+                      Icons.mail,
+                      color: Colors.greenAccent,
                     ),
                     onTap: () {
                       Navigator.push(
@@ -265,19 +276,20 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new BabyNames()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.school,
+                    leading: const Icon(
+                      Icons.school,
                       color: Colors.orangeAccent,
                     ),
                     title: new Text('begin learning ethSync',
-                        style: TextStyle(
-                            color: Colors.orangeAccent)),
-
+                        style: TextStyle(color: Colors.orangeAccent)),
                     subtitle: new Text(
                       'proof of work||stake',
                       style: new TextStyle(
-                          fontStyle: FontStyle.italic, color: Colors.blueAccent),
+                          fontStyle: FontStyle.italic,
+                          color: Colors.blueAccent),
                     ),
-                    trailing: const Icon(Icons.mail,
+                    trailing: const Icon(
+                      Icons.mail,
                       color: Colors.blueAccent,
                     ),
                     onTap: () {
@@ -285,10 +297,13 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           MaterialPageRoute(builder: (context) => new Pesto()));
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.account_balance,
-                    color: Colors.redAccent,),
-                    title: new Text('add eth|etc address - acccount',
-                    style: new TextStyle(color: Colors.purpleAccent),
+                    leading: const Icon(
+                      Icons.account_balance,
+                      color: Colors.redAccent,
+                    ),
+                    title: new Text(
+                      'add eth|etc address - acccount',
+                      style: new TextStyle(color: Colors.purpleAccent),
                     ),
                     subtitle: new Text(
                       'personal firebase storage',
@@ -296,8 +311,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           fontStyle: FontStyle.italic, color: Colors.redAccent),
                     ),
                     trailing: const Icon(Icons.person_add,
-                    color: Colors.purpleAccent
-                    ),
+                        color: Colors.purpleAccent),
                     onTap: () {
                       Navigator.push(
                           context,
