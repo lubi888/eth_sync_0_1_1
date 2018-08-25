@@ -402,6 +402,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
 
           body: TabBarView(
             children: [
+              //Tab 1
               new Scrollbar(
                 //viewportBuilder: AxisDirection.down,
                 child: new ListView(
@@ -568,19 +569,73 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   ],
                 ),
               ),
-              Icon(Icons.directions_railway),
-//              Icon(Icons.search),
+
+              //Tab 2
+              new Scrollbar(
+              child: new Container(
+//                alignment: Alignment.center,
+                child: new ListView(
+//                  new Padding(padding: EdgeInsets.all(20.0)),
+                  children: <Widget>[
+//                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
+                    new Container(
+//                      padding: EdgeInsets.all(100.0),
+                      constraints: new BoxConstraints(
+                        maxHeight: 100.0,
+                        maxWidth: 200.0,
+                      ),
+                      color: Colors.blueAccent,
+                    ),
+                    new Padding(padding: EdgeInsets.all(20.0)),
+                    new Icon(Icons.directions_railway,
+                          color: Colors.yellowAccent,), //centered
+                    new Text("oh yeah, add \n some lines"         ,
+                      textAlign: TextAlign.center,),
+                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                    new Container(
+                      constraints: new BoxConstraints(
+                        maxHeight: 100.0,
+                        maxWidth: 200.0,
+                      ),
+                      color: Colors.redAccent,
+                    ),
+                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                    new Container(
+                      constraints: new BoxConstraints(
+                        maxHeight: 100.0,
+                        maxWidth: 200.0,
+                      ),
+                      color: Colors.yellowAccent,
+                    ),
+                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                    new Container(
+                      constraints: new BoxConstraints(
+                        maxHeight: 100.0,
+                        maxWidth: 200.0,
+                      ),
+                      color: Colors.greenAccent,
+                    ),
+                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
+                  ],
+                ),
+              ),
+              ),
+
+              //Tab 3
               new Container(
                 child: new Column(
                   children: <Widget>[
                     new Text(
                       "aegyptus",
+                      style: new TextStyle(
+                        color: Colors.green,
+                        fontSize: 40.0,
+                      ),
                     ),
                     new Text(
                       words5,
                       textAlign: TextAlign.center,
                       style: new TextStyle(
-                        fontFamily: "Aegyptus", //"bln" "iching",
                         fontSize: 25.0,
                         color: Colors.redAccent.shade200,
                       ),
