@@ -10,13 +10,20 @@ import 'drawer_demo.dart';
 import 'grid_list.dart';
 import 'qr_ethsync.dart';
 import 'qr_mobile.dart';
-import 'package:fast_qr_reader_view/fast_qr_reader_view.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 const String words5 =
     "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000"
     "\n\u4DC1 \tyijing i ching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
+
+const String ethText1 = "    Hello and Welcome to ethereum sync. This app aims to provide the information needed to "
+    "successfully intall and then synchronise your computer with the Ethereum Blockchian."
+    "\n\t    We will be discussing some the main concepts of the blockchain so that you will have an overview of the "
+    "technologies envolved."
+    "\n\t    We will also be going over the ways to install and download the ethereum blockchain to full synchronization."
+    "\n\t    Photos and screenshots will be used to provide glimpses of Ethereum in action."
+    "\n\n";
 
 class EthSync extends StatelessWidget {
   @override
@@ -28,9 +35,6 @@ class EthSync extends StatelessWidget {
         primarySwatch: Colors.orange,
         buttonColor: Colors.red,
         textSelectionColor: Colors.orange,
-        //primaryTextTheme: Colors.green,
-        //fontFamily: FontStyle.italic,
-        //buttonTheme: TextDecorationStyle.dotted,
       ),
       home: new EthSyncPage(),
       debugShowCheckedModeBanner: false,
@@ -54,17 +58,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
   String bm = 'bite me now';
-
-//  void _incrementCounter() {
-//    setState(() {
-//      // This call to setState tells the Flutter framework that something has
-//      // changed in this State, which causes it to rerun the build method below
-//      // so that the display can reflect the updated values. If we changed
-//      // _counter without calling setState(), then the build method would not be
-//      // called again, and so nothing would appear to happen.
-//      _counter++;
-//    });
-//  }
 
   void _launchURL() async {
     const url = 'https://flutter.io';
@@ -106,7 +99,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
         primarySwatch: Colors.yellow,
       ),
       home: new DefaultTabController(
-        length: 3,
+        length: 4,
         child: new Scaffold(
           //return new Scaffold(
           appBar: new AppBar(
@@ -117,7 +110,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
             ]),
             actions: <Widget>[
               new Icon(Icons.search), //input before this?
-              //Selected:
 
               new PopupMenuButton<WhyFarther>(
                 //onSelected: (WhyFarther result) { setState(() { _selection = result; }); },
@@ -146,17 +138,18 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         child:
                             const Text('Placed in charge of trading charter'),
                       ),
+                      const PopupMenuDivider(),
                       const PopupMenuItem(
-                        child: const Text('--------------'),
+                        child: Icon(Icons.link),
                       ),
                       const PopupMenuItem(
-                        child: const Text('Home'),
-                      ),
-                      const PopupMenuItem(
-                        child: const Text('ethereum reddit'),
+                          child: const Icon(Icons.home),
                       ),
                       const PopupMenuItem(
                         child: const Text('ethereum website'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('ethereum reddit'),
                       ),
                       const PopupMenuItem(
                         child: const Text('ethereum gitter'),
@@ -164,11 +157,13 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       const PopupMenuItem(
                         child: const Text('ethSync website'),
                       ),
+                      const PopupMenuDivider(),
                       const PopupMenuItem(
-                        child: const Text('---------------'),
+                        child: Icon(Icons.settings),
                       ),
                       const PopupMenuItem(
                         child: const Text('Settings'),
+                        
                       ),
                       const PopupMenuItem(
                         child: const Text('Theme Light'),
@@ -176,9 +171,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       const PopupMenuItem(
                         child: const Text('Theme Dark'),
                       ),
-                      const PopupMenuItem(
-                        child: const Text('---------------'),
-                      ),
+                      const PopupMenuDivider(),
                       const PopupMenuItem(
                         child: const Text('About'),
                       ),
@@ -188,8 +181,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       const PopupMenuItem(
                         child: const Text('Report Errors & Bugs'),
                       ),
+                      const PopupMenuDivider(),
                       const PopupMenuItem(
-                        child: const Text('---------------'),
+                        child: Icon(Icons.language),
                       ),
                       const PopupMenuItem(
                         child: const Text('English: EN'),
@@ -215,12 +209,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       const PopupMenuItem(
                         child: const Text('Chinese : Cantonese : CN-south'),
                       ),
-                      const PopupMenuItem(
-                        child: const Text('--------------'),
-                      ),
-                      const PopupMenuItem(
-                        child: const Text('--------------'),
-                      ),
+                      const PopupMenuDivider(),
                     ],
               )
             ],
@@ -407,56 +396,126 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 //viewportBuilder: AxisDirection.down,
                 child: new ListView(
                   children: <Widget>[
-                    new TextField(
-                      decoration: new InputDecoration(
-                        //border: InputBorder.none,
-                        hintText: ("try some search?"),
+                    new Container(
+                      width: 300.0,
+                      height: 300.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
                       ),
+                      child: new Text(ethText1,
+                      style: new TextStyle(
+                        color: Colors.green.shade500,
+                        fontStyle: FontStyle.italic,
+                        fontSize: 18.0,
+                      ),),
                     ),
-                    new RaisedButton(
-                      onPressed: () async {
-                        Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => new MainScreen()),
-                        );
-                      },
-                      child: new Text('Show QR help'),
-                    ),
-                    new RaisedButton(
-                      onPressed: () async {
-                        Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => new CameraApp()),
-//                            he following NoSuchMethodError was thrown building Builder:
-//                        I/flutter (17355): The method '[]' was called on null.
-//                        I/flutter (17355): Receiver: null
-//                        I/flutter (17355): Tried calling: [](0)
-                        );
-                      },
-                      child: new Text('Show QR Google Mobile vision'),
-                    ),
-                    new RaisedButton(
-                      onPressed: () async {
-                        Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => new Pesto()),
-                        );
-                      },
-                      child: new Text('Show pestoEthSync receipie homepage'),
-                    ),
-                    new RaisedButton(
-                      onPressed: () async {
-                        Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => new GridListDemo()),
-                        );
-                      },
-                      child: new Text('Show grid photos homepage'),
-                    ),
+//                    new TextField(
+//                      decoration: new InputDecoration(
+//                        //border: InputBorder.none,
+//                        hintText: ("try some search?"),
+//                      ),
+//                    ),
+//                    new RaisedButton(
+//                      onPressed: () async {
+//                        Navigator.push(
+//                          context,
+//                          new MaterialPageRoute(
+//                              builder: (context) => new MainScreen()),
+//                        );
+//                      },
+//                      child: new Text('Show QR help'),
+//                    ),
+//                    new RaisedButton(
+//                      onPressed: () async {
+//                        Navigator.push(
+//                          context,
+//                          new MaterialPageRoute(
+//                              builder: (context) => new CameraApp()),
+//                        );
+//                      },
+//                      child: new Text('Show QR Google Mobile vision'),
+//                    ),
+//                    new RaisedButton(
+//                      onPressed: () async {
+//                        Navigator.push(
+//                          context,
+//                          new MaterialPageRoute(
+//                              builder: (context) => new Pesto()),
+//                        );
+//                      },
+//                      child: new Text('Show pestoEthSync receipie homepage'),
+//                    ),
+//                    new RaisedButton(
+//                      onPressed: () async {
+//                        Navigator.push(
+//                          context,
+//                          new MaterialPageRoute(
+//                              builder: (context) => new GridListDemo()),
+//                        );
+//                      },
+//                      child: new Text('Show grid photos homepage'),
+//                    ),
+//                    new Container(
+//                      width: 300.0,
+//                      height: 300.0,
+//                      decoration: new BoxDecoration(
+//                        shape: BoxShape.rectangle,
+//                        image: new DecorationImage(
+//                          image: new AssetImage(_kAsset3),
+//                        ),
+//                      ),
+//                    ),
+//                    new RaisedButton(
+//                      onPressed: () async {
+//                        Navigator.push(
+//                          context,
+//                          new MaterialPageRoute(
+//                              builder: (context) => new DrawerDemo()),
+//                        );
+//                      },
+//                      child: new Text('Show drawer demo , sidebar'),
+//                    ),
+//                    new Container(
+//                      width: 150.0,
+//                      height: 150.0,
+//                      decoration: new BoxDecoration(
+//                        shape: BoxShape.circle,
+//                        image: new DecorationImage(
+//                          image: new AssetImage(_kAsset0),
+//                        ),
+//                      ),
+//                    ),
+//                    new Text("bite me"),
+//                    new Text(
+//                      bm,
+//                    ),
+//                    new RaisedButton(
+//                      onPressed: _launchURL,
+//                      child: new Text('Show FlutterDarts homepage'),
+//                    ),
+//                    new TextField(
+//                      decoration: new InputDecoration(
+//                        //border: InputBorder.none,
+//                        hintText: ("try some search?"),
+//                      ),
+//                    ),
+//                    new Container(
+//                      width: 150.0,
+//                      height: 150.0,
+//                      decoration: new BoxDecoration(
+//                        shape: BoxShape.circle,
+//                        image: new DecorationImage(
+//                          image: new AssetImage(_kAsset1),
+//                        ),
+//                      ),
+//                    ),
+//                    new FlatButton(
+//                      padding: const EdgeInsets.only(top: 8.0),
+//                      child: new Image.network(
+//                        'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+//                      ),
+//                      onPressed: _launchURL,
+//                    ),
                     new Container(
                       width: 300.0,
                       height: 300.0,
@@ -467,70 +526,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         ),
                       ),
                     ),
-                    new RaisedButton(
-                      onPressed: () async {
-                        Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => new DrawerDemo()),
-                        );
-                      },
-                      child: new Text('Show drawer demo , sidebar'),
-                    ),
                     new Container(
-                      width: 150.0,
-                      height: 150.0,
-                      decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: new DecorationImage(
-                          image: new AssetImage(_kAsset0),
-                        ),
-                      ),
-                    ),
-                    new Text("bite me"),
-                    new Text(
-                      bm,
-                    ),
-                    new RaisedButton(
-                      onPressed: _launchURL,
-                      child: new Text('Show FlutterDarts homepage'),
-                    ),
-                    new TextField(
-                      decoration: new InputDecoration(
-                        //border: InputBorder.none,
-                        hintText: ("try some search?"),
-                      ),
-                    ),
-                    new Container(
-                      width: 150.0,
-                      height: 150.0,
-                      decoration: new BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: new DecorationImage(
-                          image: new AssetImage(_kAsset1),
-                        ),
-                      ),
-                    ),
-                    new FlatButton(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: new Image.network(
-                        'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
-                      ),
-                      onPressed: _launchURL,
-                    ),
-                    new Container(
-                      width: 300.0,
-                      height: 300.0,
-                      decoration: new BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        image: new DecorationImage(
-                          image: new AssetImage(_kAsset3),
-                        ),
-                      ),
-                    ),
-                    new Container(
-                      width: 100.0,
-                      height: 100.0,
+                      width: 50.0,
+                      height: 50.0,
                       decoration: new BoxDecoration(
                         shape: BoxShape.rectangle,
                         image: new DecorationImage(
@@ -551,10 +549,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           new Text(
                             words5,
                             textAlign: TextAlign.center,
-//                        style: new TextStyle(
-//                          fontFamily: "Aegyptus", //"bln" "iching",
-//                          fontSize: 25.0,
-//                        ),
                           ),
                         ],
                       ),
@@ -572,53 +566,61 @@ class _EthSyncPageState extends State<EthSyncPage> {
 
               //Tab 2
               new Scrollbar(
-              child: new Container(
+                child: new Container(
 //                alignment: Alignment.center,
-                child: new ListView(
+                  child: new ListView(
 //                  new Padding(padding: EdgeInsets.all(20.0)),
-                  children: <Widget>[
+                    children: <Widget>[
 //                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
-                    new Container(
+                      new Container(
 //                      padding: EdgeInsets.all(100.0),
-                      constraints: new BoxConstraints(
-                        maxHeight: 100.0,
-                        maxWidth: 200.0,
+                        constraints: new BoxConstraints(
+                          maxHeight: 100.0,
+                          maxWidth: 200.0,
+                        ),
+                        color: Colors.blueAccent,
                       ),
-                      color: Colors.blueAccent,
-                    ),
-                    new Padding(padding: EdgeInsets.all(20.0)),
-                    new Icon(Icons.directions_railway,
-                          color: Colors.yellowAccent,), //centered
-                    new Text("oh yeah, add \n some lines"         ,
-                      textAlign: TextAlign.center,),
-                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
-                    new Container(
-                      constraints: new BoxConstraints(
-                        maxHeight: 100.0,
-                        maxWidth: 200.0,
+                      new Padding(padding: EdgeInsets.all(20.0)),
+                      new Icon(
+                        Icons.directions_railway,
+                        color: Colors.yellowAccent,
+                      ), //centered
+                      new Text(
+                        "add some live graphs\nhave more inputs?",
+                        textAlign: TextAlign.center,
                       ),
-                      color: Colors.redAccent,
-                    ),
-                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
-                    new Container(
-                      constraints: new BoxConstraints(
-                        maxHeight: 100.0,
-                        maxWidth: 200.0,
+                      new Padding(
+                          padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Container(
+                        constraints: new BoxConstraints(
+                          maxHeight: 100.0,
+                          maxWidth: 200.0,
+                        ),
+                        color: Colors.redAccent,
                       ),
-                      color: Colors.yellowAccent,
-                    ),
-                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
-                    new Container(
-                      constraints: new BoxConstraints(
-                        maxHeight: 100.0,
-                        maxWidth: 200.0,
+                      new Padding(
+                          padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Container(
+                        constraints: new BoxConstraints(
+                          maxHeight: 100.0,
+                          maxWidth: 200.0,
+                        ),
+                        color: Colors.yellowAccent,
                       ),
-                      color: Colors.greenAccent,
-                    ),
-                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
-                  ],
+                      new Padding(
+                          padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Container(
+                        constraints: new BoxConstraints(
+                          maxHeight: 100.0,
+                          maxWidth: 200.0,
+                        ),
+                        color: Colors.greenAccent,
+                      ),
+                      new Padding(
+                          padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
+                    ],
+                  ),
                 ),
-              ),
               ),
 
               //Tab 3
