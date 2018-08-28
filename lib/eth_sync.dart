@@ -8,7 +8,7 @@ import 'text_form_field_data.dart';
 import 'pesto.dart';
 import 'drawer_demo.dart';
 import 'grid_list.dart';
-//import 'qr_ethsync.dart';
+import 'qr_ethsync.dart';
 //import 'qr_mobile.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
@@ -183,6 +183,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       const PopupMenuDivider(),
                       const PopupMenuItem(
+                        child: Icon(Icons.contact_mail),
+                      ),
+                      const PopupMenuItem(
                         child: const Text('About'),
                       ),
                       const PopupMenuItem(
@@ -246,8 +249,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 ),
                 new ListTile(
                     leading: const Icon(
-                      Icons.school,
-                      color: Colors.orangeAccent,
+                      Icons.school, color: Colors.orangeAccent,
                     ),
                     title: new Text('begin learning ethSync',
                         style: TextStyle(color: Colors.orangeAccent)),
@@ -267,8 +269,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.account_balance,
-                      color: Colors.redAccent,
+                      Icons.account_balance, color: Colors.redAccent,
                     ),
                     title: new Text(
                       'add eth|etc address - acccount',
@@ -289,8 +290,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.face,
-                      color: Colors.yellowAccent,
+                      Icons.face, color: Colors.yellowAccent,
                     ),
                     title: new Text(
                       'firebase chat',
@@ -303,8 +303,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           color: Colors.yellowAccent),
                     ),
                     trailing: const Icon(
-                      Icons.mail,
-                      color: Colors.greenAccent,
+                      Icons.mail, color: Colors.greenAccent,
                     ),
                     onTap: () {
                       Navigator.push(
@@ -314,8 +313,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.photo_album,
-                      color: Colors.orangeAccent,
+                      Icons.photo_album, color: Colors.orangeAccent,
                     ),
                     title: new Text(
                       'photos grid list view',
@@ -338,8 +336,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.person_outline,
-                      color: Colors.yellowAccent,
+                      Icons.person_outline, color: Colors.yellowAccent,
                     ),
                     title: new Text(
                       'register: add name, email, ethAddress',
@@ -358,6 +355,27 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => new TextFormFieldDemo()));
+                    }),
+                new ListTile(
+                    leading: const Icon(
+                      Icons.send, color: Colors.redAccent,
+                    ),
+                    title: new Text(
+                      'show|receive eth|etc address',
+                      style: new TextStyle(color: Colors.purpleAccent),
+                    ),
+                    subtitle: new Text(
+                      '\'face to face\' QR codes',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic, color: Colors.redAccent),
+                    ),
+                    trailing:
+                    const Icon(Icons.send, color: Colors.purpleAccent),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new QRMainScreen()));
                     }),
                 new ListTile(
                   leading: const Icon(Icons.launch, color: Colors.greenAccent),
@@ -501,7 +519,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         ),
                       ),
                     ),
-
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new QRMainScreen()),
+                        );
+                      },
+                      child: new Text('Show QR beam'),
+                    ),
                     new RaisedButton(
                       onPressed: _showSnackBox,
                       child: new Text('Show snackbox homepage'),

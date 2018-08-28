@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-class MainScreen extends StatefulWidget {
+class QRMainScreen extends StatefulWidget {
   @override
-  _MainScreenState createState() => new _MainScreenState();
+  _QRMainScreenState createState() => new _QRMainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _QRMainScreenState extends State<QRMainScreen> {
   static const double _topSectionTopPadding = 50.0;
   static const double _topSectionBottomPadding = 20.0;
   static const double _topSectionHeight = 50.0;
 
-  String _dataString = "Hello from this QR code!";
+//  String _dataString = "Hello from this QR code!";   //use with e.g.
+  String _dataEthString = "0x12341234123412341234";   //eth addrs regEx '0x[20]'
   String _inputErrorText;
   final TextEditingController _textController = new TextEditingController();
 
@@ -61,10 +62,10 @@ class _MainScreenState extends State<MainScreen> {
                   new Padding(
                     padding: const EdgeInsets.only(left: 10.0),
                     child: new FlatButton(
-                      child: new Text("SUBMIT"),
+                      child: new Text("Submit"),
                       onPressed: () {
                         setState(() {
-                          _dataString = _textController.text;
+                          _dataEthString = _textController.text;
                           _inputErrorText = null;
                         });
                       },
@@ -90,8 +91,17 @@ class _MainScreenState extends State<MainScreen> {
 //                        });
 //                      },
 //                    ),
+
+//                  new sample eth QR image
                     child: new QrImage(
-                      data: "0x12341234123412341234",
+                      data: _dataEthString,//_dataEthString,
+                      onError: (ex) {
+                        print("[QR] ERROR - $ex");
+                        setState(() {
+                          _inputErrorText =
+                          "Error! Maybe your input value is too long?";
+                        });
+                      },
                     ),
                   ),
                 ],
