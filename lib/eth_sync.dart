@@ -249,7 +249,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 ),
                 new ListTile(
                     leading: const Icon(
-                      Icons.school, color: Colors.orangeAccent,
+                      Icons.school,
+                      color: Colors.orangeAccent,
                     ),
                     title: new Text('begin learning ethSync',
                         style: TextStyle(color: Colors.orangeAccent)),
@@ -269,7 +270,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.account_balance, color: Colors.redAccent,
+                      Icons.account_balance,
+                      color: Colors.redAccent,
                     ),
                     title: new Text(
                       'add eth|etc address - acccount',
@@ -290,7 +292,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.face, color: Colors.yellowAccent,
+                      Icons.face,
+                      color: Colors.yellowAccent,
                     ),
                     title: new Text(
                       'firebase chat',
@@ -303,7 +306,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           color: Colors.yellowAccent),
                     ),
                     trailing: const Icon(
-                      Icons.mail, color: Colors.greenAccent,
+                      Icons.mail,
+                      color: Colors.greenAccent,
                     ),
                     onTap: () {
                       Navigator.push(
@@ -313,7 +317,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.photo_album, color: Colors.orangeAccent,
+                      Icons.photo_album,
+                      color: Colors.orangeAccent,
                     ),
                     title: new Text(
                       'photos grid list view',
@@ -336,7 +341,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.person_outline, color: Colors.yellowAccent,
+                      Icons.person_outline,
+                      color: Colors.yellowAccent,
                     ),
                     title: new Text(
                       'register: add name, email, ethAddress',
@@ -358,7 +364,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.send, color: Colors.redAccent,
+                      Icons.send,
+                      color: Colors.redAccent,
                     ),
                     title: new Text(
                       'show|receive eth|etc address',
@@ -370,7 +377,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           fontStyle: FontStyle.italic, color: Colors.redAccent),
                     ),
                     trailing:
-                    const Icon(Icons.send, color: Colors.purpleAccent),
+                        const Icon(Icons.send, color: Colors.purpleAccent),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -470,7 +477,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 child: new ListView(
                   children: <Widget>[
                     new Container(
-//                      padding: EdgeInsets.all(25.0),
                       padding: const EdgeInsets.all(10.0),
                       width: 300.0,
                       height: 800.0,
@@ -533,43 +539,43 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       onPressed: _showSnackBox,
                       child: new Text('Show snackbox homepage'),
                     ),
-//                    new Container(
-//                      child: new Column(
-//                        children: <Widget>[
-//                          new Text(
-//                            "fonts",
-//                          ),
-//                          new Text(
-//                            words5,
-//                            textAlign: TextAlign.center,
-//                          ),
-//                        ],
-//                      ),
-//                      margin: const EdgeInsets.all(10.0),
-//                      padding: const EdgeInsets.all(10.0),
-//                      decoration: new BoxDecoration(
-//                        color: Colors.yellow.shade500,
-//                        borderRadius:
-//                            new BorderRadius.all(new Radius.circular(5.0)),
-//                      ),
-//                    ),
+                    new Container(
+                      child: new Column(
+                        children: <Widget>[
+                          new Text(
+                            "fonts",
+                          ),
+                          new Text(
+                            words5,
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      margin: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
+                      decoration: new BoxDecoration(
+                        color: Colors.yellow.shade500,
+                        borderRadius:
+                            new BorderRadius.all(new Radius.circular(5.0)),
+                      ),
+                    ),
 
-//                    new TextField(
-//                      decoration: new InputDecoration(
-//                        //border: InputBorder.none,
-//                        hintText: ("try some search?"),
-//                      ),
-//                    ),
-//                    new RaisedButton(
-//                      onPressed: () async {
-//                        Navigator.push(
-//                          context,
-//                          new MaterialPageRoute(
-//                              builder: (context) => new MainScreen()),
-//                        );
-//                      },
-//                      child: new Text('Show QR help'),
-//                    ),
+                    new TextField(
+                      decoration: new InputDecoration(
+                        //border: InputBorder.none,
+                        hintText: ("try some search?"),
+                      ),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new QRMainScreen()),
+                        );
+                      },
+                      child: new Text('Show QR help'),
+                    ),
 //                    new RaisedButton(
 //                      onPressed: () async {
 //                        Navigator.push(
@@ -580,87 +586,87 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                      },
 //                      child: new Text('Show QR Google Mobile vision'),
 //                    ),
-//                    new RaisedButton(
-//                      onPressed: () async {
-//                        Navigator.push(
-//                          context,
-//                          new MaterialPageRoute(
-//                              builder: (context) => new Pesto()),
-//                        );
-//                      },
-//                      child: new Text('Show pestoEthSync receipie homepage'),
-//                    ),
-//                    new RaisedButton(
-//                      onPressed: () async {
-//                        Navigator.push(
-//                          context,
-//                          new MaterialPageRoute(
-//                              builder: (context) => new GridListDemo()),
-//                        );
-//                      },
-//                      child: new Text('Show grid photos homepage'),
-//                    ),
-//                    new Container(
-//                      width: 300.0,
-//                      height: 300.0,
-//                      decoration: new BoxDecoration(
-//                        shape: BoxShape.rectangle,
-//                        image: new DecorationImage(
-//                          image: new AssetImage(_kAsset3),
-//                        ),
-//                      ),
-//                    ),
-//                    new RaisedButton(
-//                      onPressed: () async {
-//                        Navigator.push(
-//                          context,
-//                          new MaterialPageRoute(
-//                              builder: (context) => new DrawerDemo()),
-//                        );
-//                      },
-//                      child: new Text('Show drawer demo , sidebar'),
-//                    ),
-//                    new Container(
-//                      width: 150.0,
-//                      height: 150.0,
-//                      decoration: new BoxDecoration(
-//                        shape: BoxShape.circle,
-//                        image: new DecorationImage(
-//                          image: new AssetImage(_kAsset0),
-//                        ),
-//                      ),
-//                    ),
-//                    new Text("bite me"),
-//                    new Text(
-//                      bm,
-//                    ),
-//                    new RaisedButton(
-//                      onPressed: _launchURL,
-//                      child: new Text('Show FlutterDarts homepage'),
-//                    ),
-//                    new TextField(
-//                      decoration: new InputDecoration(
-//                        //border: InputBorder.none,
-//                        hintText: ("try some search?"),
-//                      ),
-//                    ),
-//                    new Container(
-//                      width: 150.0,
-//                      height: 150.0,
-//                      decoration: new BoxDecoration(
-//                        shape: BoxShape.circle,
-//                        image: new DecorationImage(
-//                          image: new AssetImage(_kAsset1),
-//                        ),
-//                      ),
-//                    ),
-//                    new FlatButton(
-//                      padding: const EdgeInsets.only(top: 8.0),
-//                      child: new Image.network(
-//                        'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
-//                      ),
-//                      onPressed: _launchURL,
-//                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new Pesto()),
+                        );
+                      },
+                      child: new Text('Show pestoEthSync receipie homepage'),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new GridListDemo()),
+                        );
+                      },
+                      child: new Text('Show grid photos homepage'),
+                    ),
+                    new Container(
+                      width: 300.0,
+                      height: 300.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset3),
+                        ),
+                      ),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new DrawerDemo()),
+                        );
+                      },
+                      child: new Text('Show drawer demo , sidebar'),
+                    ),
+                    new Container(
+                      width: 150.0,
+                      height: 150.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset0),
+                        ),
+                      ),
+                    ),
+                    new Text("bite me"),
+                    new Text(
+                      bm,
+                    ),
+                    new RaisedButton(
+                      onPressed: _launchURL,
+                      child: new Text('Show FlutterDarts homepage'),
+                    ),
+                    new TextField(
+                      decoration: new InputDecoration(
+                        //border: InputBorder.none,
+                        hintText: ("try some search?"),
+                      ),
+                    ),
+                    new Container(
+                      width: 150.0,
+                      height: 150.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset1),
+                        ),
+                      ),
+                    ),
+                    new FlatButton(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: new Image.network(
+                        'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                      ),
+                      onPressed: _launchURL,
+                    ),
                   ],
                 ),
               ),
@@ -673,25 +679,35 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                  new Padding(padding: EdgeInsets.all(20.0)),
                     children: <Widget>[
 //                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
+                      new Padding(
+                          padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Text(
+                        "check the net for live trades",
+                        textAlign: TextAlign.center,
+                      ),
+//                      new Padding(padding: EdgeInsets.all(20.0)),
                       new Container(
-//                      padding: EdgeInsets.all(100.0),
+                      padding: EdgeInsets.all(100.0),
                         constraints: new BoxConstraints(
                           maxHeight: 100.0,
                           maxWidth: 200.0,
                         ),
                         color: Colors.blueAccent,
                       ),
-                      new Padding(padding: EdgeInsets.all(20.0)),
                       new Icon(
                         Icons.directions_railway,
                         color: Colors.yellowAccent,
                       ), //centered
                       new Text(
-                        "add some live graphs\nhave more inputs?",
+                        "add some live graphs\nhave more inputs",
                         textAlign: TextAlign.center,
                       ),
                       new Padding(
                           padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Text(
+                        "Live eth, etc, btc, gold, silver, currency rates",
+                        textAlign: TextAlign.center,
+                      ),
                       new Container(
                         constraints: new BoxConstraints(
                           maxHeight: 100.0,
@@ -701,6 +717,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       new Padding(
                           padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Text(
+                        "fx currency rates",
+                        textAlign: TextAlign.center,
+                      ),
                       new Container(
                         constraints: new BoxConstraints(
                           maxHeight: 100.0,
@@ -710,6 +730,10 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       new Padding(
                           padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
+                      new Text(
+                        "I.C.O. Initial Coin Offerings",
+                        textAlign: TextAlign.center,
+                      ),
                       new Container(
                         constraints: new BoxConstraints(
                           maxHeight: 100.0,
