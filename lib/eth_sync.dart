@@ -8,8 +8,8 @@ import 'text_form_field_data.dart';
 import 'pesto.dart';
 import 'drawer_demo.dart';
 import 'grid_list.dart';
-import 'qr_ethsync.dart';
-import 'qr_mobile.dart';
+//import 'qr_ethsync.dart';
+//import 'qr_mobile.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -17,12 +17,20 @@ const String words5 =
     "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000"
     "\n\u4DC1 \tyijing i ching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
 
-const String ethText1 = "    Hello and Welcome to ethereum sync. This app aims to provide the information needed to "
+const String ethText1 =
+    "    Hello and Welcome to ethereum sync. This app aims to provide the information needed to "
     "successfully intall and then synchronise your computer with the Ethereum Blockchian."
     "\n\t    We will be discussing some the main concepts of the blockchain so that you will have an overview of the "
-    "technologies envolved."
-    "\n\t    We will also be going over the ways to install and download the ethereum blockchain to full synchronization."
-    "\n\t    Photos and screenshots will be used to provide glimpses of Ethereum in action."
+    "technologies envolved. This app will concentrate on running the blockchain and less about discussing the myriad of uses"
+    "possible with this new technology."
+//    "\n"
+    "\n\t   Primarily we will be doing this on a Linux operating system but there will also "
+    "be information for Windows users while Mac users will be able to follow the linux examples to achieve the same results."
+    "\n\t   We will begin by looking at some of the possible programming languages and clients available for users to "
+    "download and work with the ethereum platform. We will be using the Go language because of its stability and ease of use. "
+    "This means we will be using the Geth client for ethereum and normal JavaScript to help find out additional information."
+    "\n\t   We will also take a quick look at some of the ethereum wallets out there like Mist, etc."
+    "\n\t    Text, images and screenshots will be used to provide glimpses of ethereum in action. "
     "\n\n";
 
 class EthSync extends StatelessWidget {
@@ -52,7 +60,7 @@ class EthSyncPage extends StatefulWidget {
 }
 
 class _EthSyncPageState extends State<EthSyncPage> {
-  String _kAsset0 = 'assets/etceth-asia.jpg';
+  String _kAsset0 = 'assets/devcon1.png';
   String _kAsset1 = 'assets/ethBullet.png';
   String _kAsset2 = 'assets/etcBullet.png';
   String _kAsset3 = 'assets/ethGreenHelp.png';
@@ -99,14 +107,14 @@ class _EthSyncPageState extends State<EthSyncPage> {
         primarySwatch: Colors.yellow,
       ),
       home: new DefaultTabController(
-        length: 4,
+        length: 3,
         child: new Scaffold(
           //return new Scaffold(
           appBar: new AppBar(
             bottom: new TabBar(tabs: [
-              new Tab(icon: new Icon(Icons.phone_android)),
-              new Tab(icon: new Icon(Icons.directions_railway)),
-              new Tab(icon: new Icon(Icons.search)),
+              new Tab(icon: new Icon(Icons.home)),
+              new Tab(icon: new Icon(Icons.graphic_eq)),
+              new Tab(icon: new Icon(Icons.chat)),
             ]),
             actions: <Widget>[
               new Icon(Icons.search), //input before this?
@@ -143,13 +151,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         child: Icon(Icons.link),
                       ),
                       const PopupMenuItem(
-                          child: const Icon(Icons.home),
+                        child: const Icon(Icons.home),
                       ),
                       const PopupMenuItem(
                         child: const Text('ethereum website'),
                       ),
                       const PopupMenuItem(
                         child: const Text('ethereum reddit'),
+                      ),
+                      const PopupMenuItem(
+                        child: const Text('ethereum stack exchange'),
                       ),
                       const PopupMenuItem(
                         child: const Text('ethereum gitter'),
@@ -163,7 +174,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       const PopupMenuItem(
                         child: const Text('Settings'),
-                        
                       ),
                       const PopupMenuItem(
                         child: const Text('Theme Light'),
@@ -221,24 +231,62 @@ class _EthSyncPageState extends State<EthSyncPage> {
               children: <Widget>[
                 new DrawerHeader(
                   decoration: new BoxDecoration(
-                    shape: BoxShape.circle,
+//                    shape: BoxShape.circle,
                     color: Colors.green,
                     image: new DecorationImage(
-                      image: new AssetImage(_kAsset2),
+                      image: new AssetImage(_kAsset0),
                     ),
                   ),
-                  child: Text('wallet drawer||Widget'),
+                  child: Text(
+                    'wallet || drawer widget',
+                    style: new TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Colors.yellowAccent),
+                  ),
                 ),
                 new ListTile(
-                  leading: const Icon(Icons.launch),
-                  title: new Text('Etherum website'),
-                  onTap: _onEthWeb,
-                ),
+                    leading: const Icon(
+                      Icons.school,
+                      color: Colors.orangeAccent,
+                    ),
+                    title: new Text('begin learning ethSync',
+                        style: TextStyle(color: Colors.orangeAccent)),
+                    subtitle: new Text(
+                      'proof of work||stake',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic,
+                          color: Colors.blueAccent),
+                    ),
+                    trailing: const Icon(
+                      Icons.school,
+                      color: Colors.blueAccent,
+                    ),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => new Pesto()));
+                    }),
                 new ListTile(
-                  leading: const Icon(Icons.launch),
-                  title: new Text('ethSync.com'),
-                  onTap: _onLubiEthWeb,
-                ),
+                    leading: const Icon(
+                      Icons.account_balance,
+                      color: Colors.redAccent,
+                    ),
+                    title: new Text(
+                      'add eth|etc address - acccount',
+                      style: new TextStyle(color: Colors.purpleAccent),
+                    ),
+                    subtitle: new Text(
+                      'personal firebase storage',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic, color: Colors.redAccent),
+                    ),
+                    trailing:
+                        const Icon(Icons.add_alert, color: Colors.purpleAccent),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new DrawerDemo()));
+                    }),
                 new ListTile(
                     leading: const Icon(
                       Icons.face,
@@ -266,50 +314,21 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(
-                      Icons.school,
+                      Icons.photo_album,
                       color: Colors.orangeAccent,
                     ),
-                    title: new Text('begin learning ethSync',
-                        style: TextStyle(color: Colors.orangeAccent)),
+                    title: new Text(
+                      'photos grid list view',
+                      style: new TextStyle(color: Colors.orangeAccent),
+                    ),
                     subtitle: new Text(
-                      'proof of work||stake',
+                      'photo gallery',
                       style: new TextStyle(
                           fontStyle: FontStyle.italic,
                           color: Colors.blueAccent),
                     ),
-                    trailing: const Icon(
-                      Icons.mail,
-                      color: Colors.blueAccent,
-                    ),
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => new Pesto()));
-                    }),
-                new ListTile(
-                    leading: const Icon(
-                      Icons.account_balance,
-                      color: Colors.redAccent,
-                    ),
-                    title: new Text(
-                      'add eth|etc address - acccount',
-                      style: new TextStyle(color: Colors.purpleAccent),
-                    ),
-                    subtitle: new Text(
-                      'personal firebase storage',
-                      style: new TextStyle(
-                          fontStyle: FontStyle.italic, color: Colors.redAccent),
-                    ),
-                    trailing: const Icon(Icons.person_add,
-                        color: Colors.purpleAccent),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => new DrawerDemo()));
-                    }),
-                new ListTile(
-                    leading: const Icon(Icons.photo_library),
-                    title: new Text('photos grid list view, photo library'),
+                    trailing:
+                        const Icon(Icons.add_a_photo, color: Colors.blueAccent),
                     onTap: () async {
                       Navigator.push(
                         context,
@@ -318,9 +337,22 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       );
                     }),
                 new ListTile(
-                    leading: const Icon(Icons.person_outline),
-                    title:
-                        new Text('register, add data: Name, email, ethAddress'),
+                    leading: const Icon(
+                      Icons.person_outline,
+                      color: Colors.yellowAccent,
+                    ),
+                    title: new Text(
+                      'register: add name, email, ethAddress',
+                      style: new TextStyle(color: Colors.yellowAccent),
+                    ),
+                    subtitle: new Text(
+                      'eth, etc, btc, addresses',
+                      style: new TextStyle(
+                          fontStyle: FontStyle.italic,
+                          color: Colors.greenAccent),
+                    ),
+                    trailing:
+                        const Icon(Icons.person_add, color: Colors.greenAccent),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -328,8 +360,30 @@ class _EthSyncPageState extends State<EthSyncPage> {
                               builder: (context) => new TextFormFieldDemo()));
                     }),
                 new ListTile(
+                  leading: const Icon(Icons.launch, color: Colors.greenAccent),
+                  title: new Text(
+                    'Etherum website',
+                    style: new TextStyle(
+                        fontStyle: FontStyle.italic, color: Colors.greenAccent),
+                  ),
+                  trailing: const Icon(Icons.launch, color: Colors.greenAccent),
+                  onTap: _onEthWeb,
+                ),
+                new ListTile(
+                  leading: const Icon(Icons.launch, color: Colors.purpleAccent),
+                  title: new Text(
+                    'ethSync.com',
+                    style: new TextStyle(
+                        fontStyle: FontStyle.italic,
+                        color: Colors.purpleAccent),
+                  ),
+                  trailing:
+                      const Icon(Icons.launch, color: Colors.purpleAccent),
+                  onTap: _onLubiEthWeb,
+                ),
+                new ListTile(
                     leading: const Icon(Icons.android),
-                    title: new Text('1st page'),
+                    title: new Text('1st page --------'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -338,7 +392,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     }),
                 new ListTile(
                     leading: const Icon(Icons.android),
-                    title: new Text('2nd page'),
+                    title: new Text('2nd page ----------'),
                     onTap: () {
                       Navigator.push(
                           context,
@@ -389,6 +443,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
             ),
           ),
 
+          //begin main body
           body: TabBarView(
             children: [
               //Tab 1
@@ -397,18 +452,81 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 child: new ListView(
                   children: <Widget>[
                     new Container(
+//                      padding: EdgeInsets.all(25.0),
+                      padding: const EdgeInsets.all(10.0),
+                      width: 300.0,
+                      height: 800.0,
+                      decoration: new BoxDecoration(
+//                        shape: BoxShape.rectangle,
+//                        color: Colors.yellow.shade500,
+                        borderRadius:
+                            new BorderRadius.all(new Radius.circular(50.0)),
+                      ),
+                      child: new Text(
+                        ethText1,
+//                      textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          color: Colors.green.shade300,
+                          fontStyle: FontStyle.italic,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                    ),
+                    new RaisedButton(
+                        child: new Text('Begin learning ethSync'),
+                        padding: EdgeInsets.all(20.0),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => new Pesto()));
+                        }),
+                    new Container(
                       width: 300.0,
                       height: 300.0,
                       decoration: new BoxDecoration(
                         shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset3),
+                        ),
                       ),
-                      child: new Text(ethText1,
-                      style: new TextStyle(
-                        color: Colors.green.shade500,
-                        fontStyle: FontStyle.italic,
-                        fontSize: 18.0,
-                      ),),
                     ),
+                    new Container(
+                      width: 50.0,
+                      height: 50.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset4),
+                        ),
+                      ),
+                    ),
+
+                    new RaisedButton(
+                      onPressed: _showSnackBox,
+                      child: new Text('Show snackbox homepage'),
+                    ),
+//                    new Container(
+//                      child: new Column(
+//                        children: <Widget>[
+//                          new Text(
+//                            "fonts",
+//                          ),
+//                          new Text(
+//                            words5,
+//                            textAlign: TextAlign.center,
+//                          ),
+//                        ],
+//                      ),
+//                      margin: const EdgeInsets.all(10.0),
+//                      padding: const EdgeInsets.all(10.0),
+//                      decoration: new BoxDecoration(
+//                        color: Colors.yellow.shade500,
+//                        borderRadius:
+//                            new BorderRadius.all(new Radius.circular(5.0)),
+//                      ),
+//                    ),
+
 //                    new TextField(
 //                      decoration: new InputDecoration(
 //                        //border: InputBorder.none,
@@ -516,50 +634,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                      ),
 //                      onPressed: _launchURL,
 //                    ),
-                    new Container(
-                      width: 300.0,
-                      height: 300.0,
-                      decoration: new BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        image: new DecorationImage(
-                          image: new AssetImage(_kAsset3),
-                        ),
-                      ),
-                    ),
-                    new Container(
-                      width: 50.0,
-                      height: 50.0,
-                      decoration: new BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        image: new DecorationImage(
-                          image: new AssetImage(_kAsset4),
-                        ),
-                      ),
-                    ),
-                    new RaisedButton(
-                      onPressed: _showSnackBox,
-                      child: new Text('Show snackbox homepage'),
-                    ),
-                    new Container(
-                      child: new Column(
-                        children: <Widget>[
-                          new Text(
-                            "aegyptus",
-                          ),
-                          new Text(
-                            words5,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                      margin: const EdgeInsets.all(10.0),
-                      padding: const EdgeInsets.all(10.0),
-                      decoration: new BoxDecoration(
-                        color: Colors.yellow.shade500,
-                        borderRadius:
-                            new BorderRadius.all(new Radius.circular(5.0)),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -628,7 +702,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 child: new Column(
                   children: <Widget>[
                     new Text(
-                      "aegyptus",
+                      "fonts",
                       style: new TextStyle(
                         color: Colors.green,
                         fontSize: 40.0,
