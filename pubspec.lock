@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  camera:
+    dependency: "direct main"
+    description:
+      name: camera
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.3"
   charcode:
     dependency: transitive
     description:
@@ -75,6 +82,13 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.2"
+  fast_qr_reader_view:
+    dependency: "direct main"
+    description:
+      name: fast_qr_reader_view
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2"
@@ -228,6 +242,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.6.2"
+  path_provider:
+    dependency: "direct main"
+    description:
+      name: path_provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.1"
   plugin:
     dependency: transitive
     description:
@@ -270,6 +291,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0+1"
+  share:
+    dependency: "direct main"
+    description:
+      name: share
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.3"
   shelf:
     dependency: transitive
     description:
@@ -387,6 +415,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.8"
+  video_player:
+    dependency: "direct main"
+    description:
+      name: video_player
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.4"
   vm_service_client:
     dependency: transitive
     description:
@@ -417,4 +452,4 @@ packages:
     version: "2.1.15"
 sdks:
   dart: ">=2.0.0-dev.68.0 <3.0.0"
-  flutter: ">=0.2.4 <2.0.0"
+  flutter: ">=0.2.5 <2.0.0"

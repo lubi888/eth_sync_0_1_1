@@ -9,7 +9,11 @@ import 'pesto.dart';
 import 'drawer_demo.dart';
 import 'grid_list.dart';
 import 'qr_ethsync.dart';
-//import 'qr_mobile.dart';
+import 'camera.dart';
+import 'qr_mobile.dart';
+import 'shareEthSync.dart';
+import 'package:share/share.dart';
+
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -18,20 +22,25 @@ const String words5 =
     "\n\u4DC1 \tyijing i ching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
 
 const String ethText1 =
-    "    Hello and Welcome to ethereum sync. This app aims to provide the information needed to "
+    "    Hello and welcome to ethereum sync. This app aims to provide the information needed to "
     "successfully intall and then synchronise your computer with the Ethereum Blockchian."
-    "\n\t    We will be discussing some the main concepts of the blockchain so that you will have an overview of the "
-    "technologies envolved. This app will concentrate on running the blockchain and less about discussing the myriad of uses"
+    "\n\nWe will be discussing some the main concepts of the blockchain so that you will have an overview of the "
+    "technologies envolved. This app will concentrate on running the blockchain and less about discussing the myriad of uses "
     "possible with this new technology."
-//    "\n"
-    "\n\t   Primarily we will be doing this on a Linux operating system but there will also "
+    "\n\nPrimarily we will be doing this on a Linux operating system but there will also "
     "be information for Windows users while Mac users will be able to follow the linux examples to achieve the same results."
-    "\n\t   We will begin by looking at some of the possible programming languages and clients available for users to "
+    "\n\nWe will begin by looking at some of the possible programming languages and clients available for users to "
     "download and work with the ethereum platform. We will be using the Go language because of its stability and ease of use. "
     "This means we will be using the Geth client for ethereum and normal JavaScript to help find out additional information."
-    "\n\t   We will also take a quick look at some of the ethereum wallets out there like Mist, etc."
-    "\n\t    Text, images and screenshots will be used to provide glimpses of ethereum in action. "
-    "\n\n";
+    "\n\nWe will also take a quick look at some of the ethereum wallets out there like Mist and online favorite My Ethernet Wallet."
+    "\n\nText, images and screenshots will be used to provide glimpses of ethereum in action. Screenshots are from Oracle's "
+    "VirtualBox."
+    "\n\nSystem Setup 2018.09.xx : Linux Mint 19 Tara, 4.15.0-33-generic, a popular derivative of Ubuntu according to DistroWatch. "
+    "Go version : . go1.10  linux/amd64 "
+    "Dell XPS laptop with an Intel© Core™ i7-8550U CPU @ 1.80GHz × 65534. "
+    "Windows 10. Go version : xx.";
+
+const String textShareURL = 'www.linuxubi.eu';
 
 class EthSync extends StatelessWidget {
   @override
@@ -97,6 +106,15 @@ class _EthSyncPageState extends State<EthSyncPage> {
   void _showSnackBox() {
     Navigator.push(
         context, new MaterialPageRoute(builder: (context) => new SnackBar()));
+  }
+
+  void _shareEthSync() {
+
+    final RenderBox box = context.findRenderObject();
+    Share.share(textShareURL,
+        sharePositionOrigin:
+        box.localToGlobal(Offset.zero) &
+        box.size);
   }
 
   @override
@@ -479,7 +497,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     new Container(
                       padding: const EdgeInsets.all(10.0),
                       width: 300.0,
-                      height: 800.0,
+                      height: 1000.0,
                       decoration: new BoxDecoration(
 //                        shape: BoxShape.rectangle,
 //                        color: Colors.yellow.shade500,
@@ -488,7 +506,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       child: new Text(
                         ethText1,
-//                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.green.shade300,
                           fontStyle: FontStyle.italic,
@@ -576,16 +594,27 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       },
                       child: new Text('Show QR help'),
                     ),
-//                    new RaisedButton(
-//                      onPressed: () async {
-//                        Navigator.push(
-//                          context,
-//                          new MaterialPageRoute(
-//                              builder: (context) => new CameraApp()),
-//                        );
-//                      },
-//                      child: new Text('Show QR Google Mobile vision'),
-//                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new CameraExampleHome()),
+                        );
+                      },
+                      child: new Text('Camera open'),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new CameraApp1()),
+                        );
+                      },
+                      child: new Text('Camera qr reader'),
+                    ),
+
                     new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
@@ -625,6 +654,20 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         );
                       },
                       child: new Text('Show drawer demo , sidebar'),
+                    ),
+                    new RaisedButton(
+                      onPressed: _shareEthSync,
+                      child: new Text('share this before now'),
+                    ),
+                    new RaisedButton(
+                      onPressed: () async {
+                        Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => new ShareEthSync()),
+                        );
+                      },
+                      child: new Text('share this next text page ++'),
                     ),
                     new Container(
                       width: 150.0,

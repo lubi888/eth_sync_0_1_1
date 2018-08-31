@@ -3,23 +3,22 @@ import 'dart:async';
 import 'package:fast_qr_reader_view/fast_qr_reader_view.dart';
 
 List<CameraDescription> cameras;
-
-//Future<Null> main() async {
-//  // Fetch the available cameras before initializing the app.
-//  try {
-//    cameras = await availableCameras();
-//  } on QRReaderException catch (e) {
+Future<Null> main() async {
+  // Fetch the available cameras before initializing the app.
+  try {
+    cameras = await availableCameras();
+  } on QRReaderException catch (e) {
 //    logError(e.code, e.description);
-//  }
-//  runApp(new MyAppQR());
-//}
-
-class CameraApp extends StatefulWidget {
-  @override
-  _CameraAppState createState() => new _CameraAppState();
+  }
+  runApp(new CameraApp1());
 }
 
-class _CameraAppState extends State<CameraApp> {
+class CameraApp1 extends StatefulWidget {
+  @override
+  _CameraApp1State createState() => new _CameraApp1State();
+}
+
+class _CameraApp1State extends State<CameraApp1> {
   QRReaderController controller;
 
   @override
