@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:share/share.dart';
+
 import 'secondclass.dart';
 import 'firstclass.dart';
 import 'firebaseFlutt.dart';
@@ -12,16 +14,15 @@ import 'qr_ethsync.dart';
 import 'camera.dart';
 import 'qr_mobile.dart';
 import 'shareEthSync.dart';
-import 'package:share/share.dart';
 
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 const String words5 =
     "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000"
-    "\n\u4DC1 \tyijing i ching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
+    "\n\u4DC1 \tyijingit is possibleching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
 
-const String ethText1 =
+const String ethTextIntro =
     "    Hello and welcome to ethereum sync. This app aims to provide the information needed to "
     "successfully intall and then synchronise your computer with the Ethereum Blockchian."
     "\n\nWe will be discussing some the main concepts of the blockchain so that you will have an overview of the "
@@ -34,11 +35,32 @@ const String ethText1 =
     "This means we will be using the Geth client for ethereum and normal JavaScript to help find out additional information."
     "\n\nWe will also take a quick look at some of the ethereum wallets out there like Mist and online favorite My Ethernet Wallet."
     "\n\nText, images and screenshots will be used to provide glimpses of ethereum in action. Screenshots are from Oracle's "
-    "VirtualBox."
-    "\n\nSystem Setup 2018.09.xx : Linux Mint 19 Tara, 4.15.0-33-generic, a popular derivative of Ubuntu according to DistroWatch. "
+    "VirtualBox. "
+    "\n\nWe will also take a look at ERC20 coins and what they mean for people, businesses and the greater Ethereum environment in general. "
+    "\n\nThe split that happend in 2015 created Etheruem, eth, and Ethereum Classic. We'll take a quick look at etc and how to use "
+    "the information in this app to use the exact same processes but using a different blockchain."
+    "\n\nAbout setup: System Setup 2018.09.xx : Linux Mint 19 Tara, 4.15.0-33-generic, a popular derivative of Ubuntu according to DistroWatch. "
     "Go version : . go1.10  linux/amd64 "
     "Dell XPS laptop with an Intel© Core™ i7-8550U CPU @ 1.80GHz × 65534. "
-    "Windows 10. Go version : xx.";
+    "Windows 10. Go version : xx. "
+    "\n\n";
+
+const String ethTextMiners = "The author is currently not synced with the ethereum or classic blockchain. "
+    "There are 3 main reasons for this:"
+    "\n\n1: Blockchains require fundamentally large amounts of electricity and time to execute; cryptograpic computations, "
+    "large networking requirements and human input. Like all forms of energy there are environmental costs and consequences. "
+    "\n\nInstead of spending time to run a blockchain||website it is possible to spend time studying the blockchain technologies, ideas, theories, "
+    "conundrums and challenges. It is possible and necessary to also spend time on programming languages. Throw in some finance theories for the fun. "
+    "Perhaps start with \'fractional reserve banking\' to get a picture of retail banking and then advance from there."
+    "\n\n2: The author doesn't currently have a comfortable computing environment broad enough to stabally sync; large ROM, Ram, processors & cores, net bandwidth. "
+    "\n\n An attempt was made to run the blockchain in the cloud using Google Compute Engine GCE but the blockchain sync"
+    "failed a number of times after about 10Gb. Perhaps Docker can come in ad be of help here soon."
+    "\n\n3: The author is currently not using etheum in a daily, monetary life. Most transactions are for certain expendetures on the "
+    "net and are completed using a web wallet, like MyEthernetWallet, an exchange, like Kraken, or a dedicated aFpp (often "
+    "in conjunction with a laptop) like Coinbase. Another easy option is to run an ethereum wallet like mist. "
+    "\n\nHowever, one is expectantly awaiting the next evolutionary advancement with etherum and proof of stake (p.o.s) and using it "
+    "more in daily local, national and international purchases. This may or may not a whole new internet, which some are labelling 3.0."
+    "\n\nTo this endit is possible support ethereum, blockchains, crypto-coins and dlt(decentralized ledger technology) overall.";
 
 const String textShareURL = 'www.linuxubi.eu';
 
@@ -497,7 +519,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     new Container(
                       padding: const EdgeInsets.all(10.0),
                       width: 300.0,
-                      height: 1000.0,
+                      height: 1300.0,
                       decoration: new BoxDecoration(
 //                        shape: BoxShape.rectangle,
 //                        color: Colors.yellow.shade500,
@@ -505,7 +527,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             new BorderRadius.all(new Radius.circular(50.0)),
                       ),
                       child: new Text(
-                        ethText1,
+                        ethTextIntro,
                       textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.green.shade300,
@@ -710,6 +732,15 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       onPressed: _launchURL,
                     ),
+                    new Text(
+                      ethTextMiners,
+                      style: new TextStyle(
+                        color: Colors.greenAccent.shade200,
+                        fontSize: 18.0,
+                        fontStyle: FontStyle.italic,
+                      ),
+
+                    ),
                   ],
                 ),
               ),
@@ -774,7 +805,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       new Padding(
                           padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
                       new Text(
-                        "I.C.O. Initial Coin Offerings",
+                        "ERC20 Coin. I.C.O. Initial Coin Offerings",
                         textAlign: TextAlign.center,
                       ),
                       new Container(
