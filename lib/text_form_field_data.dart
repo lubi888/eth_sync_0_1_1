@@ -162,8 +162,6 @@ class TextFormFieldDemoState extends State<TextFormFieldDemo> {
                 },
                 validator: _validateEthAddr,
               ),
-//              new Text("\n\ntry something like this:"
-//                  "\n\n 0x281055afc982d96fab65b3a49cac8b878184cb16"),
               new GestureDetector(
                 child: new Text('\n\n $sampEthAdd'),
                 onLongPress: () {

@@ -15,7 +15,6 @@ import 'camera.dart';
 import 'qr_mobile.dart';
 import 'shareEthSync.dart';
 
-
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
 const String words5 =
@@ -45,31 +44,64 @@ const String ethTextIntro =
     "Windows 10. Go version : xx. "
     "\n\n";
 
-const String ethTextMiners = "The author is currently not synced with the ethereum or classic blockchain. "
-    "There are 3 main reasons for this:"
+const String ethTextMiners =
+    "\n\nDisclosure: The author is currently not synced with the ethereum or classic blockchain. "
+    "\n\nThere are 3 main reasons for this:"
     "\n\n1: Blockchains require fundamentally large amounts of electricity and time to execute; cryptograpic computations, "
     "large networking requirements and human input. Like all forms of energy there are environmental costs and consequences. "
     "\n\nInstead of spending time to run a blockchain||website it is possible to spend time studying the blockchain technologies, ideas, theories, "
     "conundrums and challenges. It is possible and necessary to also spend time on programming languages. Throw in some finance theories for the fun. "
     "Perhaps start with \'fractional reserve banking\' to get a picture of retail banking and then advance from there."
-    "\n\n2: The author doesn't currently have a comfortable computing environment broad enough to stabally sync; large ROM, Ram, processors & cores, net bandwidth. "
+    "\n\n2: The author doesn't currently have a comfortable computing environment broad enough to stabally sync; large RAM, ROM storage, processors & cores, net bandwidth. "
     "\n\n An attempt was made to run the blockchain in the cloud using Google Compute Engine GCE but the blockchain sync"
-    "failed a number of times after about 10Gb. Perhaps Docker can come in ad be of help here soon."
+    "failed a number of times after about 10Gb. Perhaps Docker can come in and be of help here soon."
     "\n\n3: The author is currently not using etheum in a daily, monetary life. Most transactions are for certain expendetures on the "
     "net and are completed using a web wallet, like MyEthernetWallet, an exchange, like Kraken, or a dedicated aFpp (often "
     "in conjunction with a laptop) like Coinbase. Another easy option is to run an ethereum wallet like mist. "
     "\n\nHowever, one is expectantly awaiting the next evolutionary advancement with etherum and proof of stake (p.o.s) and using it "
     "more in daily local, national and international purchases. This may or may not a whole new internet, which some are labelling 3.0."
-    "\n\nTo this endit is possible support ethereum, blockchains, crypto-coins and dlt(decentralized ledger technology) overall.";
+    "\n\nTo this endit is possible support ethereum, blockchains, crypto-coins and dlt (decentralized ledger technology) overall."
+    "\n\n";
 
-const String textShareURL = 'www.linuxubi.eu';
+const String ethTextLinks =
+    "\n\nEthereum links to mobile apps and respective websites. "
+    "\n\nWhat apps are helpful for the ethereum enthusias? "
+    "\n\nETHNews: This app has been growing steadily over the years. They usually have good articles on the global "
+    "eth community. They have now introduced video reports updated daily which are linked to YouTube. There's also "
+    "a section on basic explanations of the technologies involved. Their website is \"https://www.ethnews.com/\" and"
+    "you can find the android app here: https://play.google.com/store/apps/details?id=com.ethnews.android&hl=en while "
+    "the apple app is here: https://itunes.apple.com/us/app/ethnews-ethereum-news-resources/id1163849810?ls=1&mt=8"
+    "\n\nCoin Market Cap: They have a web presence here: https://coinmarketcap.com/ but it has as much info in the mobile "
+    "apps. This app is good for looking at all the available coins and the associated charts. Android https://goo.gl/2SGzt5 "
+    "and Apple https://goo.gl/dkLXEC"
+    "\n\nShapeShift and CoinCap are both from French company ShapeShift. ShapeShift is used to convert coins quickly. It is basically "
+    "an exchange but without having to sign up for full exchange services. Android app: https://play.google.com/store/apps/details?id=com.shapeshift.droid_shapeshift "
+    "and Apple app: https://itunes.apple.com/ie/app/shapeshift-crypto-converter/id996569075?mt=8 "
+    "Coincap.io also have an API for any programmers who want to use their live data. Android: https://play.google.com/store/apps/details?id=io.coinCap.coinCap "
+    "\n\nEthereum Stats is a small app but gives all the necessary details on Ethereum in a concise format. Android: "
+    "https://play.google.com/store/apps/details?id=com.christiangrieger.ethereumstats "
+    "The author also has an app for Etherum Classic that is in the same format. Android: https://play.google.com/store/apps/details?id=com.christiangrieger.ethereumclassicstats"
+    "\n\nWarning: Do not download any app that off you ethereum by using resources on your mobile phone. These apps promise "
+    "to reward with crypto coins of various flavors. Basically, this is a scam to use up processing power and memory on one's phone "
+    "but in reality the person or organization benefitting the most is the write of the app and not the person who "
+    "has downloaded and installed it. The app will than start to eat your mobile phone computing cycles and not stop. "
+    "One may not notice this at first but it will become evident very soon as the battery will start to drain much faster, the phone"
+    "will also start to heat heavily. There will then be a competition for network services and, thus, bandwidth will be in short supply. All"
+    "of this work is then going to reward the program designer and only a pittance of any generated crypto coins will "
+    "be passed on to the mobile phone owner. Note that this is legal as these apps wouldn't be on the Play store if they "
+    "were not. However, there are general moves by the web browser companies to stop this very same occurrance from "
+    "happening online. 2018.09 saw Firefox forbid \'crytposcripts, cryptojacking\' for doing the exact same thing; using up the users\'s "
+    "computer processing cycles in the background while the webpage is open. cf link Firefox Upgrades to Ban Crypto Mining Malware "
+    "https://coinpedia.org/news/firefox-upgrades-to-ban-crypto-mining-malware/"
+    "\n\n";
+
+const String textShareURL = "www.linuxubi.eu";
 
 class EthSync extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: "ethSync",
-//      style: new TextStyle(color: Colors.red)),
       theme: new ThemeData(
         primarySwatch: Colors.orange,
         buttonColor: Colors.red,
@@ -131,12 +163,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
   }
 
   void _shareEthSync() {
-
     final RenderBox box = context.findRenderObject();
     Share.share(textShareURL,
-        sharePositionOrigin:
-        box.localToGlobal(Offset.zero) &
-        box.size);
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
   }
 
   @override
@@ -517,7 +546,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                 child: new ListView(
                   children: <Widget>[
                     new Container(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(15.0),
                       width: 300.0,
                       height: 1300.0,
                       decoration: new BoxDecoration(
@@ -528,7 +557,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       child: new Text(
                         ethTextIntro,
-                      textAlign: TextAlign.right,
+                        textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.green.shade300,
                           fontStyle: FontStyle.italic,
@@ -599,7 +628,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             new BorderRadius.all(new Radius.circular(5.0)),
                       ),
                     ),
-
                     new TextField(
                       decoration: new InputDecoration(
                         //border: InputBorder.none,
@@ -636,7 +664,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       },
                       child: new Text('Camera qr reader'),
                     ),
-
                     new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
@@ -732,14 +759,29 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       onPressed: _launchURL,
                     ),
-                    new Text(
-                      ethTextMiners,
-                      style: new TextStyle(
-                        color: Colors.greenAccent.shade200,
-                        fontSize: 18.0,
-                        fontStyle: FontStyle.italic,
+                    Container(
+                      padding: EdgeInsets.all(20.0),
+                      child: Text(
+                        ethTextLinks,
+                        textAlign: TextAlign.right,
+                        style: new TextStyle(
+                          color: Colors.greenAccent.shade200,
+                          fontSize: 18.0,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
-
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20.0),
+                      child: Text(
+                        ethTextMiners,
+                        textAlign: TextAlign.right,
+                        style: new TextStyle(
+                          color: Colors.greenAccent.shade200,
+                          fontSize: 18.0,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -761,7 +803,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
 //                      new Padding(padding: EdgeInsets.all(20.0)),
                       new Container(
-                      padding: EdgeInsets.all(100.0),
+                        padding: EdgeInsets.all(100.0),
                         constraints: new BoxConstraints(
                           maxHeight: 100.0,
                           maxWidth: 200.0,
