@@ -102,7 +102,6 @@ class _DrawerDemoState extends State<DrawerDemo> with TickerProviderStateMixin {
               currentAccountPicture: const CircleAvatar(
                 backgroundImage: const AssetImage(
                   _kAsset0,
-//                  package: _kGalleryAssetsPackage,
                 ),
               ),
               otherAccountsPictures: <Widget>[
@@ -115,7 +114,6 @@ class _DrawerDemoState extends State<DrawerDemo> with TickerProviderStateMixin {
                     child: const CircleAvatar(
                       backgroundImage: const AssetImage(
                         _kAsset1,
-//                        package: _kGalleryAssetsPackage,
                       ),
                     ),
                   ),
@@ -129,7 +127,6 @@ class _DrawerDemoState extends State<DrawerDemo> with TickerProviderStateMixin {
                     child: const CircleAvatar(
                       backgroundImage: const AssetImage(
                         _kAsset2,
-//                        package: _kGalleryAssetsPackage,
                       ),
                     ),
                   ),
@@ -169,6 +166,7 @@ class _DrawerDemoState extends State<DrawerDemo> with TickerProviderStateMixin {
                             }).toList(),
                           ),
                         ),
+
                         // The drawer's "details" view.
                         new SlideTransition(
                           position: _drawerDetailsPosition,
@@ -217,7 +215,6 @@ class _DrawerDemoState extends State<DrawerDemo> with TickerProviderStateMixin {
                   image: const DecorationImage(
                     image: const AssetImage(
                       _kAsset0,
-//                      package: _kGalleryAssetsPackage,
                     ),
                   ),
                 ),
