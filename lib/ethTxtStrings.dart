@@ -1,8 +1,8 @@
 //import 'package:flutter/material.dart';
 
 const String ethTextFonts =
-    "\u03BB \tgreek lambda \n\u1688 \togham tinne \n\u304B \tjapanese ka \n\u4E07 \tcjk ideograph 10,000"
-    "\n\u4DC1 \tyijingit is possibleching \n\u1300 \tethiopic symbol \n\u{13080} \tegyptian eye";
+    "\u03BB \n\tgreek lambda \n\u1688 \n\togham tinne \n\u304B \n\tjapanese ka \n\u4E07 \n\tcjk ideograph 10,000"
+    "\n\u4DC1 \n\tyijingit is possibleching \n\u1300 \n\tethiopic symbol \n\u{13080} \n\tegyptian eye";
 
 const String ethTextIntro =
     "Hello and welcome to ethereum sync. This app aims to provide the information needed to "

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 import 'secondclass.dart';
 import 'firstclass.dart';
@@ -50,9 +51,20 @@ class _EthSyncPageState extends State<EthSyncPage> {
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
   String bm = 'bite me now';
+  var _kTransparentImage = 'assets/duIcon.png';
 
   void _launchURL() async {
     const url = 'https://flutter.io';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void _launchURLGithub() async {
+    const url =
+        'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -144,16 +156,20 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         child: const Icon(Icons.home),
                       ),
                       const PopupMenuItem(
-                        child: const Text('ethereum website'),
+                        child: const Text(
+                            'ethereum website'), //https://www.ethereum.org/
                       ),
                       const PopupMenuItem(
-                        child: const Text('ethereum reddit'),
+                        child: const Text(
+                            'ethereum reddit'), //https://www.reddit.com/r/ethereum/
                       ),
                       const PopupMenuItem(
-                        child: const Text('ethereum stack exchange'),
+                        child: const Text(
+                            'ethereum stack exchange'), //https://ethereum.stackexchange.com/
                       ),
                       const PopupMenuItem(
-                        child: const Text('ethereum gitter'),
+                        child: const Text(
+                            'ethereum gitter'), //https://gitter.im/ethereum/home
                       ),
                       const PopupMenuItem(
                         child: const Text('ethSync website'),
@@ -432,26 +448,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             builder: (context) => new SecondScreen()),
                       );
                     }),
-                new ListTile(
-                    leading: const Icon(Icons.accessibility),
-                    title: new Text('navigator x screen'),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => new SecondScreen()),
-                      );
-                    }),
-                new ListTile(
-                    leading: const Icon(Icons.accessibility),
-                    title: new Text('navigator x screen'),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        new MaterialPageRoute(
-                            builder: (context) => new SecondScreen()),
-                      );
-                    }),
               ],
             ),
           ),
@@ -604,8 +600,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       child: new Text('Show grid photos homepage'),
                     ),
                     new Container(
-                      width: 300.0,
-                      height: 300.0,
+                      width: 200.0,
+                      height: 250.0,
                       decoration: new BoxDecoration(
                         shape: BoxShape.rectangle,
                         image: new DecorationImage(
@@ -672,13 +668,28 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                     ),
                     new FlatButton(
-                      padding: const EdgeInsets.only(top: 8.0),
+//                      padding: const EdgeInsets.only(top: 8.0),
                       child: new Image.network(
-                        'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                        'https://github.com/flutter/plugins/raw/master/packages/video_player/doc/demo_ipod.gif?raw=true',
+                        height: 300.0,
+                        width: 300.0,
                       ),
                       onPressed: _launchURL,
                     ),
-
+                    new FlatButton(
+//                      padding: const EdgeInsets.only(top: 8.0),
+                      child: new Image.network(
+                        'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+                        height: 300.0,
+                        width: 300.0,
+                      ),
+                      onPressed: _launchURLGithub,
+                    ),
+//                    new FadeInImage.memoryNetwork(
+//                    placeholder: _kTransparentImage,
+//                      image:
+//                          'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+//                    ),
                     Container(
                       child: Text(
                         ethTextFounders,
@@ -694,7 +705,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       decoration: new BoxDecoration(
                         color: Colors.blueAccent,
                         borderRadius:
-                        new BorderRadius.all(new Radius.circular(50.0)),
+                            new BorderRadius.all(new Radius.circular(50.0)),
                       ),
                     ),
                     Container(
@@ -712,7 +723,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       decoration: new BoxDecoration(
                         color: Colors.yellow.shade500,
                         borderRadius:
-                        new BorderRadius.all(new Radius.circular(50.0)),
+                            new BorderRadius.all(new Radius.circular(50.0)),
                       ),
                     ),
                     Container(
@@ -833,32 +844,35 @@ class _EthSyncPageState extends State<EthSyncPage> {
               ),
 
               //Tab 3
-              new Container(
-                child: new Column(
-                  children: <Widget>[
-                    new Text(
-                      "fonts",
-                      style: new TextStyle(
-                        color: Colors.green,
-                        fontSize: 40.0,
+              new Scrollbar(
+                child: new Container(
+                  child: new ListView(
+                    children: <Widget>[
+                      new Text(
+                        "fonts",
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          color: Colors.green,
+                          fontSize: 40.0,
+                        ),
                       ),
-                    ),
-                    new Text(
-                      ethTextFonts,
-                      textAlign: TextAlign.center,
-                      style: new TextStyle(
-                        fontSize: 25.0,
-                        color: Colors.redAccent.shade200,
+                      new Text(
+                        ethTextFonts,
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontSize: 25.0,
+                          color: Colors.redAccent.shade200,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: new BoxDecoration(
+                    color: Colors.yellow.shade500,
+                    borderRadius:
+                        new BorderRadius.all(new Radius.circular(50.0)),
+                  ),
                 ),
-//                margin: const EdgeInsets.all(10.0),
-                padding: const EdgeInsets.all(10.0),
-//                decoration: new BoxDecoration(
-//                  color: Colors.yellow.shade500,
-//                  borderRadius: new BorderRadius.all(new Radius.circular(50.0)),
-//                ),
               ),
             ],
           ),
