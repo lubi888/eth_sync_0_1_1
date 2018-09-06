@@ -14,7 +14,7 @@ const String _kAsset2 = 'assets/etcBullet.png';                  //'packages/flu
 //const String _kGalleryAssetsPackage = 'flutter_gallery_assets';
 
 class DrawerDemo extends StatefulWidget {
-  static const String routeName = '/material/drawer';
+//  static const String routeName = '/material/drawer';
 
   @override
   _DrawerDemoState createState() => new _DrawerDemoState();

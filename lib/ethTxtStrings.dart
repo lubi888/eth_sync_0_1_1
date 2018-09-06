@@ -2,7 +2,7 @@
 
 const String ethTextFonts =
     "\u03BB \n\tgreek lambda \n\u1688 \n\togham tinne \n\u304B \n\tjapanese ka \n\u4E07 \n\tcjk ideograph 10,000"
-    "\n\u4DC1 \n\tyijingit is possibleching \n\u1300 \n\tethiopic symbol \n\u{13080} \n\tegyptian eye";
+    "\n\u4DC1 \n\tiching \n\u1300 \n\tethiopic symbol \n\u{13080} \n\tegyptian eye";
 
 const String ethTextIntro =
     "Hello and welcome to ethereum sync. This app aims to provide the information needed to "
@@ -66,8 +66,15 @@ const String ethTextTop5 = "\n\nHere we have the top 5-8 apps, websites and comp
     "\n\nExchanges - USA, EU, JP"
     "\n\n ";
 
-const String ethTextFounders = "\n\nWho are the founders of Ethereum? What is the current state today?"
-    "\n\n ";
+const String ethTextFounders = "\n\nWho are the founders of Ethereum?"
+    "\n\nEthereum was proposed in late 2013 by programmer Vitalik Buterin. An online crowdsale took place in the summer of 2014 to raise funds. "
+    "\n\nThe ethereum system went live in 2015.07.30 and the origianl authors were Vitalik Buterin, Joseph Lubin and Gavin Wood. "
+    "\n\nThe collapse of the DAO project in 2016 caused a split, fork between the original chain, ethereum classic ETC, and the new ethereum ETH. "
+    "\n\nEthereum was quiet then for another year until mid-end of 2017 when cryptocurrencies in gnereal became noted and admired for their Distributed Ledger Technology "
+    "and also as instruments of monetary exchange.\n";
+
+const String ethTextCurrentState = "\n\nWhat is the current state today?";
+
 
 const String ethTextMiners =
     "\n\nDisclosure: The author is currently not synced with the ethereum or classic blockchain. "

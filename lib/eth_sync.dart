@@ -172,6 +172,14 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             'ethereum gitter'), //https://gitter.im/ethereum/home
                       ),
                       const PopupMenuItem(
+                        child: const Text(
+                            'ethereum wikipedia'), //https://en.wikipedia.org/wiki/Ethereum
+                      ),
+                      const PopupMenuItem(
+                        child: const Text(
+                            'ethereum wikipedia'), //   https://github.com/ethereum
+                      ),
+                      const PopupMenuItem(
                         child: const Text('ethSync website'),
                       ),
                       const PopupMenuDivider(),
