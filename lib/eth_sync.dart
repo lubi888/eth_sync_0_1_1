@@ -113,6 +113,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
         child: new Scaffold(
           appBar: _appBar(),
           drawer: _drawer(context),
+          bottomNavigationBar: _bottomNavBar(),
           body: TabBarView(
             children: [
               //Tab 1
@@ -544,6 +545,17 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //    num = value;
 //  })
   }
+}
+
+Widget _bottomNavBar() {
+  return new BottomNavigationBar(items: [
+    new BottomNavigationBarItem(
+        icon: new Icon(Icons.add_alert), title: new Text("alert me")),
+    new BottomNavigationBarItem(
+        icon: new Icon(Icons.shopping_basket), title: new Text("shoppig")),
+    new BottomNavigationBarItem(
+        icon: new Icon(Icons.polymer), title: new Text("polymer")),
+  ]);
 }
 
 Widget _appBar() {
