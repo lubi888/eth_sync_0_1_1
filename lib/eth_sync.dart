@@ -210,9 +210,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         hintText: ("try some search?"),
                       ),
                     ),
-                    new Checkbox(value: true, onChanged: (bool value ){}),
-                    new Radio<int>(value: 0, groupValue: 0, onChanged: (_){}),
-                    new Switch(value: false, onChanged: (bool value){}),
+                    new Checkbox(value: true, onChanged: (bool value) {}),
+                    new Radio<int>(value: 0, groupValue: 0, onChanged: (_) {}),
+                    new Switch(value: true, onChanged: (bool value) {}),
                     new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
@@ -223,7 +223,46 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       },
                       child: new Text('Show QR help'),
                     ),
-                    new RaisedButton(
+                    new ButtonBar(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        new RaisedButton(
+                          child: new RaisedButton(
+                              child: const Text("raised buttn"),
+                              onPressed: () {}),
+                        ),
+                        const RaisedButton(
+                            child: const Text("disabled raised buttn2"),
+                            onPressed: null),
+                      ],
+                    ),
+                    new ButtonBar(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        new FlatButton(
+                          child: new RaisedButton(
+                              child: const Text("flat buttn"),
+                              color: Colors.redAccent,
+                              onPressed: () {}),
+                        ),
+                        const FlatButton(
+                            child: const Text("disabled flat buttn2"),
+                            color: Colors.blueAccent,
+                            onPressed: null),
+                      ],
+                    ),
+                    new ButtonBar(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        new OutlineButton(
+                          child: new RaisedButton(
+                              child: const Text("outlined buttn"),
+                              color: Colors.redAccent,
+                              onPressed: () {}),
+                        ),
+                      ],
+                    ),
+                      new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
                           context,
