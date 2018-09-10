@@ -262,7 +262,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         ),
                       ],
                     ),
-                      new RaisedButton(
+                    new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
                           context,
@@ -388,10 +388,14 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                       onPressed: _launchURLGithub,
                     ),
-//                    new FadeInImage.memoryNetwork(
-//                    placeholder: _kTransparentImage,
-//                      image:
-//                          'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+//                    new FlatButton(
+//                    child:
+                    new Image.network(
+                      'http://thecatapi.com/api/images/get?format=src&type=gif',
+//                      height: 200.0,
+//                      width: 200.0,
+                    ),
+//                      onPressed: _launchURLGithub,
 //                    ),
                     Container(
                       child: Text(
