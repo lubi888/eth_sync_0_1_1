@@ -210,6 +210,9 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         hintText: ("try some search?"),
                       ),
                     ),
+                    new Checkbox(value: true, onChanged: (bool value ){}),
+                    new Radio<int>(value: 0, groupValue: 0, onChanged: (_){}),
+                    new Switch(value: false, onChanged: (bool value){}),
                     new RaisedButton(
                       onPressed: () async {
                         Navigator.push(
@@ -545,17 +548,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //    num = value;
 //  })
   }
-}
-
-Widget _bottomNavBar() {
-  return new BottomNavigationBar(items: [
-    new BottomNavigationBarItem(
-        icon: new Icon(Icons.add_alert), title: new Text("alert me")),
-    new BottomNavigationBarItem(
-        icon: new Icon(Icons.shopping_basket), title: new Text("shoppig")),
-    new BottomNavigationBarItem(
-        icon: new Icon(Icons.polymer), title: new Text("polymer")),
-  ]);
 }
 
 Widget _appBar() {
@@ -903,6 +895,17 @@ Widget _drawer(BuildContext context) {
       ],
     ),
   );
+}
+
+Widget _bottomNavBar() {
+  return new BottomNavigationBar(items: [
+    new BottomNavigationBarItem(
+        icon: new Icon(Icons.add_alert), title: new Text("alert me")),
+    new BottomNavigationBarItem(
+        icon: new Icon(Icons.shopping_basket), title: new Text("shoppig")),
+    new BottomNavigationBarItem(
+        icon: new Icon(Icons.polymer), title: new Text("polymer")),
+  ]);
 }
 
 class SnackBar extends StatelessWidget {

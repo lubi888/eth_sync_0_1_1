@@ -65,7 +65,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="14305" />
+          <entry key="dart" value="14412" />
           <entry key="gradle" value="4" />
           <entry key="md" value="16" />
           <entry key="xml" value="6" />
@@ -74,7 +74,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="14305" />
+          <entry key="Dart" value="14412" />
           <entry key="Groovy" value="4" />
           <entry key="PLAIN_TEXT" value="16" />
           <entry key="XML" value="6" />
@@ -118,8 +118,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/eth_sync.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="556" column="63" selection-start-line="556" selection-start-column="63" selection-end-line="556" selection-end-column="63" />
+            <state relative-caret-position="350">
+              <caret line="214" column="67" selection-start-line="214" selection-start-column="67" selection-end-line="214" selection-end-column="67" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -147,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gridlis</find>
       <find>title</find>
       <find>title`</find>
       <find>bodyHei</find>
@@ -177,6 +176,7 @@
       <find>show gr</find>
       <find>gitter</find>
       <find>wiki</find>
+      <find>search</find>
     </findStrings>
     <replaceStrings>
       <replace>EthSyncRecipe</replace>
@@ -270,7 +270,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536590291137" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536593468208" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/flutter/flutter/bin/cache/dart-sdk" />
@@ -550,8 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/eth_sync.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="556" column="63" selection-start-line="556" selection-start-column="63" selection-end-line="556" selection-end-column="63" />
+        <state relative-caret-position="350">
+          <caret line="214" column="67" selection-start-line="214" selection-start-column="67" selection-end-line="214" selection-end-column="67" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
