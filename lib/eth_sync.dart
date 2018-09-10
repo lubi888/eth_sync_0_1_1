@@ -433,14 +433,12 @@ class _EthSyncPageState extends State<EthSyncPage> {
                   child: new ListView(
 //                  new Padding(padding: EdgeInsets.all(20.0)),
                     children: <Widget>[
-//                    new Padding(padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 30.0)),
                       new Padding(
                           padding: EdgeInsets.fromLTRB(30.0, 50.0, 30.0, 0.0)),
                       new Text(
                         "check the net for live trades",
                         textAlign: TextAlign.center,
                       ),
-//                      new Padding(padding: EdgeInsets.all(20.0)),
                       new Container(
                         padding: EdgeInsets.all(100.0),
                         constraints: new BoxConstraints(
@@ -678,7 +676,7 @@ Widget _appBar() {
   ); //
 }
 
-Widget _drawer(context) {
+Widget _drawer(BuildContext context) {
   String _kAsset0 = 'assets/devcon1.png';
 
   void _onEthWeb() async {
