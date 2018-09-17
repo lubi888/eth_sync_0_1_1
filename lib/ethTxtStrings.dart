@@ -21,10 +21,7 @@ const String ethTextIntro =
     "\n\nWe will also take a look at ERC20 coins and what they mean for people, businesses and the greater Ethereum environment in general. "
     "\n\nThe split that happend in 2015 created Etheruem, eth, and Ethereum Classic, etc. We'll take a quick look at etc and how to use "
     "the information in this app to use the exact same processes but using a different blockchain."
-    "\n\nAbout setup: System Setup 2018.09.xx : Linux Mint 19 Tara, 4.15.0-33-generic, a popular derivative of Ubuntu according to DistroWatch. "
-    "Go version : . go1.10  linux/amd64 "
-    "Dell XPS laptop with an Intel© Core™ i7-8550U CPU @ 1.80GHz × 65534. "
-    "Windows 10. Go version : xx. "
+    "\n\nAbout setup: System Setup"
     "\n\n";
 
 const String ethTextLinks =
@@ -86,14 +83,12 @@ const String ethTextMiners =
     "conundrums and challenges. It is possible and necessary to also spend time on programming languages. Throw in some finance theories for the fun. "
     "Perhaps start with \'fractional reserve banking\' to get a picture of retail banking and then advance from there."
     "\n\n2: The author doesn't currently have a comfortable computing environment broad enough to stabally sync; large RAM, ROM storage, processors & cores, net bandwidth. "
-    "\n\n An attempt was made to run the blockchain in the cloud using Google Compute Engine GCE but the blockchain sync"
-    "failed a number of times after about 10Gb. Perhaps Docker can come in and be of help here soon."
     "\n\n3: The author is currently not using etheum in a daily, monetary life. Most transactions are for certain expendetures on the "
-    "net and are completed using a web wallet, like MyEthernetWallet, an exchange, like Kraken, or a dedicated aFpp (often "
+    "net and are completed using a web wallet, like MyEthernetWallet, an exchange, like Kraken, or a dedicated app (often "
     "in conjunction with a laptop) like Coinbase. Another easy option is to run an ethereum wallet like mist. "
     "\n\nHowever, one is expectantly awaiting the next evolutionary advancement with etherum and proof of stake (p.o.s) and using it "
     "more in daily local, national and international purchases. This may or may not a whole new internet, which some are labelling 3.0."
     "\n\nTo this endit is possible support ethereum, blockchains, crypto-coins and dlt (decentralized ledger technology) overall."
     "\n\n";
 
-const String textShareURL = "www.linuxubi.eu";
+const String textShareURL = "www.et.eu";

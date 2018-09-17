@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 import 'secondclass.dart';
 import 'firstclass.dart';
