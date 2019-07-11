@@ -7,11 +7,11 @@ class BabyNames extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'babbbbbbys',
+      title: 'babbbbbbys firebase & firestore',
       theme: new ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: new MyHomePage(title: 'baby names votes'),
+      home: new MyHomePage(title: 'this is an experimental online chat and BBS bulletin board system.'),
     );
   }
 }

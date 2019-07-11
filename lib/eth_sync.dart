@@ -49,8 +49,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
   String _kAsset2 = 'assets/etcBullet.png';
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
-  String bm = 'bite me now';
-  var _kTransparentImage = 'assets/duIcon.png';
+  String bm = 'bit now';
+  // var _kTransparentImage = 'assets/duIcon.png';
 
   void _launchURL() async {
     const url = 'https://flutter.io';
@@ -160,8 +160,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                     ),
                     new Container(
-                      width: 50.0,
-                      height: 50.0,
+                      width: 75.0,
+                      height: 75.0,
                       decoration: new BoxDecoration(
                         shape: BoxShape.rectangle,
                         image: new DecorationImage(
@@ -182,6 +182,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     new RaisedButton(
                       onPressed: _showSnackBox,
                       child: new Text('Show snackbox homepage'),
+                    ),
+                                        new Container(
+                      width: 100.0,
+                      height: 100.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: new DecorationImage(
+                          image: new AssetImage(_kAsset2),
+                        ),
+                      ),
                     ),
                     new Container(
                       child: new Column(
@@ -382,8 +392,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                      padding: const EdgeInsets.only(top: 8.0),
                       child: new Image.network(
                         'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
-                        height: 300.0,
-                        width: 300.0,
+                        height: 200.0,
+                        width: 200.0,
                       ),
                       onPressed: _launchURLGithub,
                     ),
