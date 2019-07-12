@@ -65,8 +65,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
   }
 
   void _launchURLGithub() async {
-    const url =
-        "https://github.com";
+    const url = "https://github.com";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -420,8 +419,25 @@ class _EthSyncPageState extends State<EthSyncPage> {
 //                      onPressed: _launchURLGithub,
 //                    ),
                     Container(
-                      child: Text(
-                        ethTextFounders,
+                      // child: Text(
+                      //   ethTextFounders,
+                      //   textAlign: TextAlign.right,
+                      //   style: new TextStyle(
+                      //     color: Colors.red.shade800,
+                      //     fontSize: 18.0,
+                      //     fontStyle: FontStyle.italic,
+                      //   ),
+                      // ),
+                      child: Linkify(
+                        onOpen: (link) async {
+                          if (await canLaunch(link.url)) {
+                            await launch(link.url);
+                          } else {
+                            throw 'Could not launch $link';
+                          }
+                        },
+                        humanize: true,
+                        text: ethTextFounders,
                         textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.red.shade800,
@@ -438,8 +454,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       ),
                     ),
                     Container(
-                      child: Text(
-                        ethTextTop5,
+                      child: Linkify(
+                        onOpen: (link) async {
+                          if (await canLaunch(link.url)) {
+                            await launch(link.url);
+                          } else {
+                            throw 'Could not launch $link';
+                          }
+                        },
+                        text: ethTextTop5,
+                        humanize: true,
                         textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.blue.shade900,
@@ -467,6 +491,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           }
                         },
                         text: ethTextLinks,
+                        humanize: true,
                         textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.yellowAccent,
@@ -474,7 +499,6 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           fontStyle: FontStyle.italic,
                         ),
                       ),
-                      // text: "Made by https://cretezy.com \n\nMail: example@gmail.com \n\n  this is test http://pub.dev/ ",
                       margin: const EdgeInsets.all(10.0),
                       padding: const EdgeInsets.all(10.0),
                       decoration: new BoxDecoration(
