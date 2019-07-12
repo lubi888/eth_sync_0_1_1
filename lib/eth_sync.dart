@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
-
+import 'dart:async';
 import 'secondclass.dart';
 import 'firstclass.dart';
 import 'firebaseFlutt.dart';
@@ -15,6 +15,8 @@ import 'camera.dart';
 import 'qr_mobile.dart';
 import 'shareEthSync.dart';
 import 'ethTxtStrings.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+// import 'package:async/async.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
 
@@ -50,10 +52,11 @@ class _EthSyncPageState extends State<EthSyncPage> {
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
   String bm = 'bit now';
+  String x_url = "";
   // var _kTransparentImage = 'assets/duIcon.png';
 
   void _launchURL() async {
-    const url = 'https://flutter.io';
+    const url = "https://flutter.io";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -63,13 +66,22 @@ class _EthSyncPageState extends State<EthSyncPage> {
 
   void _launchURLGithub() async {
     const url =
-        'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg';
+        "https://github.com";
     if (await canLaunch(url)) {
       await launch(url);
     } else {
       throw 'Could not launch $url';
     }
   }
+
+  // void _launchURLX(String x_url) async {
+  //   const url= x_url;
+  //   if (await canLaunch(url)) {
+  //     await launch(url);
+  //   } else {
+  //     throw "could not launch $url";
+  //   }
+  // }
 
 //  void _onEthWeb() async {
 //    const url = 'https://ethereum.org/';
@@ -183,7 +195,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       onPressed: _showSnackBox,
                       child: new Text('Show snackbox homepage'),
                     ),
-                                        new Container(
+                    new Container(
                       width: 100.0,
                       height: 100.0,
                       decoration: new BoxDecoration(
@@ -391,7 +403,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     new FlatButton(
 //                      padding: const EdgeInsets.only(top: 8.0),
                       child: new Image.network(
-                        'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+                        // 'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+                        'https://github.com',
                         height: 200.0,
                         width: 200.0,
                       ),
@@ -442,9 +455,18 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             new BorderRadius.all(new Radius.circular(50.0)),
                       ),
                     ),
+
                     Container(
-                      child: Text(
-                        ethTextLinks,
+                      child: Linkify(
+                        // onOpen: _onOpen,
+                        onOpen: (link) async {
+                          if (await canLaunch(link.url)) {
+                            await launch(link.url);
+                          } else {
+                            throw 'Could not launch $link';
+                          }
+                        },
+                        text: ethTextLinks,
                         textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.yellowAccent,
@@ -452,6 +474,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           fontStyle: FontStyle.italic,
                         ),
                       ),
+                      // text: "Made by https://cretezy.com \n\nMail: example@gmail.com \n\n  this is test http://pub.dev/ ",
                       margin: const EdgeInsets.all(10.0),
                       padding: const EdgeInsets.all(10.0),
                       decoration: new BoxDecoration(
@@ -460,6 +483,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                             new BorderRadius.all(new Radius.circular(50.0)),
                       ),
                     ),
+
                     Container(
                       child: Text(
                         ethTextMiners,
@@ -909,7 +933,7 @@ Widget _drawer(BuildContext context) {
             style: new TextStyle(
                 fontStyle: FontStyle.italic, color: Colors.purpleAccent),
           ),
-          trailing: const Icon(Icons.launch, color: Colors.purpleAccent),
+          trailing: const Icon(Icons.bookmark, color: Colors.orangeAccent),
           onTap: _onLubiEthWeb,
         ),
         new ListTile(
@@ -976,3 +1000,11 @@ class SnackBar extends StatelessWidget {
     );
   }
 }
+
+// Future<void> _onOpen(LinkableElement link) async {
+//   if (await canLaunch(link.url)) {
+//     await launch(link.url);
+//   } else {
+//     throw 'Could not launch $link';
+//   }
+// }

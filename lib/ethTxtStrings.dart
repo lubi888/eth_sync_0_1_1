@@ -1,4 +1,7 @@
-//import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_linkify/flutter_linkify.dart';
+
+final String url_cry_malware = "https://coinpedia.org/news/firefox-upgrades-to-ban-crypto-mining-malware/";
 
 const String ethTextFonts =
     "\u03BB \n\tgreek lambda \n\u1688 \n\togham tinne \n\u304B \n\tjapanese ka \n\u4E07 \n\tcjk ideograph 10,000"
@@ -60,7 +63,8 @@ const String ethTextLinks =
     "computer processing cycles in the background while the webpage is open. cf link Firefox Upgrades to Ban Crypto Mining Malware "
     "https://coinpedia.org/news/firefox-upgrades-to-ban-crypto-mining-malware/"
     "\n\n";
-
+    // "click this link : ${url_cry_malware}"
+    
 const String ethTextTop5 = "\n\nHere we have the top 5-8 apps, websites and companies to browse and install:"
     "\n\nWallets - Online "
     "\n\nWallets - Standalone "
