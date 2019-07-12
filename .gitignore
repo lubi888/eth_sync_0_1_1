@@ -10,6 +10,6 @@ android/gradle/
 build/
 
 .flutter-plugins
-pubspec.lock
+# pubspec.lock
 .idea/
 .vscode/
