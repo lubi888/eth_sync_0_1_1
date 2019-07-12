@@ -4,6 +4,12 @@
 .packages
 .pub/
 
+android/.gradle
+android/gradle/
+
 build/
 
 .flutter-plugins
+pubspec.lock
+.idea/
+.vscode/

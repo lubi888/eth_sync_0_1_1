@@ -30,7 +30,6 @@ class EthSync extends StatelessWidget {
         accentColor: Colors.cyan[600],
         buttonColor: Colors.red,
         textSelectionColor: Colors.orange,
-        
       ),
       home: new EthSyncPage(),
       debugShowCheckedModeBanner: false,
@@ -402,10 +401,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       onPressed: _launchURL,
                     ),
                     new FlatButton(
-//                      padding: const EdgeInsets.only(top: 8.0),
                       child: new Image.network(
-                        // 'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
-                        'https://github.com',
+                        'https://media.giphy.com/media/Y4OxQ9b9YxyuQi8Hgg/giphy.gif',
                         height: 200.0,
                         width: 200.0,
                       ),
@@ -514,7 +511,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
 
                     Container(
                       child: Linkify(
-                                                onOpen: (link) async {
+                        onOpen: (link) async {
                           if (await canLaunch(link.url)) {
                             await launch(link.url);
                           } else {
@@ -522,7 +519,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           }
                         },
                         text: ethTextMiners,
-                        humanize: true,                      
+                        humanize: true,
                         textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.green.shade900,
@@ -681,112 +678,111 @@ Widget _appBar() {
 //                },
 //  onSelected: selectedTile,
         itemBuilder: (BuildContext context) => <PopupMenuEntry<WhyFarther>>[
-              const PopupMenuItem<WhyFarther>(
-                value: WhyFarther.harder,
-                child: const Text('enum, Working a lot harder'),
-              ),
-              const PopupMenuItem<WhyFarther>(
-                value: WhyFarther.smarter,
-                child: const Text('Being a lot smarter'),
-              ),
-              const PopupMenuItem<WhyFarther>(
-                value: WhyFarther.selfStarter,
-                child: const Text('Being a self-starter'),
-              ),
-              const PopupMenuItem<WhyFarther>(
-                value: WhyFarther.tradingCharter,
-                child: const Text('Placed in charge of trading charter'),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: Icon(Icons.link),
-              ),
-              const PopupMenuItem(
-                child: const Icon(Icons.home),
-              ),
-              const PopupMenuItem(
-                child:
-                    const Text('ethereum website'), //https://www.ethereum.org/
-              ),
-              const PopupMenuItem(
-                child: const Text(
-                    'ethereum reddit'), //https://www.reddit.com/r/ethereum/
-              ),
-              const PopupMenuItem(
-                child: const Text(
-                    'ethereum stack exchange'), //https://ethereum.stackexchange.com/
-              ),
-              const PopupMenuItem(
-                child: const Text(
-                    'ethereum gitter'), //https://gitter.im/ethereum/home
-              ),
-              const PopupMenuItem(
-                child: const Text(
-                    'ethereum wikipedia'), //https://en.wikipedia.org/wiki/Ethereum
-              ),
-              const PopupMenuItem(
-                child: const Text(
-                    'ethereum wikipedia'), //   https://github.com/ethereum
-              ),
-              const PopupMenuItem(
-                child: const Text('ethSync website'),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: Icon(Icons.settings),
-              ),
-              const PopupMenuItem(
-                child: const Text('Settings'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Theme Light'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Theme Dark'),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: Icon(Icons.contact_mail),
-              ),
-              const PopupMenuItem(
-                child: const Text('About'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Contact'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Report Errors & Bugs'),
-              ),
-              const PopupMenuDivider(),
-              const PopupMenuItem(
-                child: Icon(Icons.language),
-              ),
-              const PopupMenuItem(
-                child: const Text('English: EN'),
-              ),
-              const PopupMenuItem(
-                child: const Text('French : Francais : FR'),
-              ),
-              const PopupMenuItem(
-                child: const Text('German : Deutsch : DE'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Italian : Italiano : IT'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Spanish : Espanol : ES'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Japanese : Nihongo : JP'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Chinese : Mandarin : CN-north'),
-              ),
-              const PopupMenuItem(
-                child: const Text('Chinese : Cantonese : CN-south'),
-              ),
-              const PopupMenuDivider(),
-            ],
+          const PopupMenuItem<WhyFarther>(
+            value: WhyFarther.harder,
+            child: const Text('enum, Working a lot harder'),
+          ),
+          const PopupMenuItem<WhyFarther>(
+            value: WhyFarther.smarter,
+            child: const Text('Being a lot smarter'),
+          ),
+          const PopupMenuItem<WhyFarther>(
+            value: WhyFarther.selfStarter,
+            child: const Text('Being a self-starter'),
+          ),
+          const PopupMenuItem<WhyFarther>(
+            value: WhyFarther.tradingCharter,
+            child: const Text('Placed in charge of trading charter'),
+          ),
+          const PopupMenuDivider(),
+          const PopupMenuItem(
+            child: Icon(Icons.link),
+          ),
+          const PopupMenuItem(
+            child: const Icon(Icons.home),
+          ),
+          const PopupMenuItem(
+            child: const Text('ethereum website'), //https://www.ethereum.org/
+          ),
+          const PopupMenuItem(
+            child: const Text(
+                'ethereum reddit'), //https://www.reddit.com/r/ethereum/
+          ),
+          const PopupMenuItem(
+            child: const Text(
+                'ethereum stack exchange'), //https://ethereum.stackexchange.com/
+          ),
+          const PopupMenuItem(
+            child:
+                const Text('ethereum gitter'), //https://gitter.im/ethereum/home
+          ),
+          const PopupMenuItem(
+            child: const Text(
+                'ethereum wikipedia'), //https://en.wikipedia.org/wiki/Ethereum
+          ),
+          const PopupMenuItem(
+            child: const Text(
+                'ethereum wikipedia'), //   https://github.com/ethereum
+          ),
+          const PopupMenuItem(
+            child: const Text('ethSync website'),
+          ),
+          const PopupMenuDivider(),
+          const PopupMenuItem(
+            child: Icon(Icons.settings),
+          ),
+          const PopupMenuItem(
+            child: const Text('Settings'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Theme Light'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Theme Dark'),
+          ),
+          const PopupMenuDivider(),
+          const PopupMenuItem(
+            child: Icon(Icons.contact_mail),
+          ),
+          const PopupMenuItem(
+            child: const Text('About'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Contact'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Report Errors & Bugs'),
+          ),
+          const PopupMenuDivider(),
+          const PopupMenuItem(
+            child: Icon(Icons.language),
+          ),
+          const PopupMenuItem(
+            child: const Text('English: EN'),
+          ),
+          const PopupMenuItem(
+            child: const Text('French : Francais : FR'),
+          ),
+          const PopupMenuItem(
+            child: const Text('German : Deutsch : DE'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Italian : Italiano : IT'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Spanish : Espanol : ES'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Japanese : Nihongo : JP'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Chinese : Mandarin : CN-north'),
+          ),
+          const PopupMenuItem(
+            child: const Text('Chinese : Cantonese : CN-south'),
+          ),
+          const PopupMenuDivider(),
+        ],
       )
     ],
   ); //
