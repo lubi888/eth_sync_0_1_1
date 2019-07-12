@@ -27,8 +27,10 @@ class EthSync extends StatelessWidget {
       title: "ethSync",
       theme: new ThemeData(
         primarySwatch: Colors.orange,
+        accentColor: Colors.cyan[600],
         buttonColor: Colors.red,
         textSelectionColor: Colors.orange,
+        
       ),
       home: new EthSyncPage(),
       debugShowCheckedModeBanner: false,
@@ -443,6 +445,8 @@ class _EthSyncPageState extends State<EthSyncPage> {
                           color: Colors.red.shade800,
                           fontSize: 18.0,
                           fontStyle: FontStyle.italic,
+                          //red txt on yell bg, helps blue links
+                          backgroundColor: Colors.yellow,
                         ),
                       ),
                       margin: const EdgeInsets.all(10.0),
@@ -509,8 +513,16 @@ class _EthSyncPageState extends State<EthSyncPage> {
                     ),
 
                     Container(
-                      child: Text(
-                        ethTextMiners,
+                      child: Linkify(
+                                                onOpen: (link) async {
+                          if (await canLaunch(link.url)) {
+                            await launch(link.url);
+                          } else {
+                            throw 'Could not launch $link';
+                          }
+                        },
+                        text: ethTextMiners,
+                        humanize: true,                      
                         textAlign: TextAlign.right,
                         style: new TextStyle(
                           color: Colors.green.shade900,

@@ -86,6 +86,7 @@ const String ethTextCurrentState = "\n\nWhat is the current state today?";
 
 const String ethTextMiners =
     "\n\nDisclosure: The author is currently not synced with the ethereum or classic blockchain. "
+    "\n\nhttps://www.ethereum.org"
     "\n\nThere are 3 main reasons for this:"
     "\n\n1: Blockchains require electricity and time to execute; cryptograpic computations, "
     "large networking requirements and human input. Like all forms of energy there are environmental costs and consequences. This is just to sync to blockchain "
