@@ -12,7 +12,7 @@ class _QRMainScreenState extends State<QRMainScreen> {
   static const double _topSectionHeight = 50.0;
 
 //  String _dataString = "Hello from this QR code!";   //use with e.g.
-  String _dataEthString = "0x12341234123412341234";   //eth addrs regEx '0x[20]'
+  String _dataEthString = "0x012345678901234567890";   //eth addrs regEx '0x[20]'
   String _inputErrorText;
   final TextEditingController _textController = new TextEditingController();
 
