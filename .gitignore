@@ -13,3 +13,7 @@ build/
 # pubspec.lock
 .idea/
 .vscode/
+.idea/workspace.xml
+.idea/libraries/Flutter_Plugins.xml
+.idea/libraries/Dart_Packages.xml
+.idea/codeStyles/Project.xml
