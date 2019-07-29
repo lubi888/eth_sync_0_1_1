@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
-import 'dart:async';
+// import 'dart:async';
 import 'secondclass.dart';
 import 'firstclass.dart';
 import 'firebaseFlutt.dart';
@@ -54,7 +54,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
   String _kAsset3 = 'assets/ethGreenHelp.png';
   String _kAsset4 = 'assets/duIcon.png';
   String bm = 'bit now';
-  String x_url = "";
+  // String x_url = "";
   // var _kTransparentImage = 'assets/duIcon.png';
 
   void _launchURL() async {
