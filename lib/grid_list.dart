@@ -1,7 +1,3 @@
-// Copyright 2016 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -264,51 +260,6 @@ class GridListDemoState extends State<GridListDemo> {
       title: 'bleach bit clean cache ',
       caption: 'ckean swap, etc',
     ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_2.jpg',
-//      title: 'Somewhere',
-//      caption: 'Beautiful mountains',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_3.jpg',
-//      title: 'A place',
-//      caption: 'Beautiful hills',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_4.jpg',
-//      title: 'New Zealand',
-//      caption: 'View from the van',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_5.jpg',
-//      title: 'Autumn',
-//      caption: 'The golden season',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_6.jpg',
-//      title: 'Germany',
-//      caption: 'Englischer Garten',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_7.jpg',
-//      title: 'A country',
-//      caption: 'Grass fields',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_8.jpg',
-//      title: 'Mountain country',
-//      caption: 'River forest',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_9.jpg',
-//      title: 'Alpine place',
-//      caption: 'Green hills',
-//    ),
-//    new Photo(
-//      assetName: 'packages/flutter_gallery_assets/landscape_10.jpg',
-//      title: 'Desert land',
-//      caption: 'Blue skies',
-//    ),
 //    new Photo(
 //      assetName: 'packages/flutter_gallery_assets/landscape_11.jpg',
 //      title: 'Narnia',
