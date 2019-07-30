@@ -10,7 +10,7 @@ dependencies:
   collection: '>=1.9.1'
   string_scanner: ^1.0.0
   url_launcher: #3.0.0
-  cloud_firestore: ^0.7.0     # new
+  cloud_firestore: ^0.12.9
   qr_flutter: ^2.1.0+55
   camera: ^0.2.3
   path_provider: ^0.4.1

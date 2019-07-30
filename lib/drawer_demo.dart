@@ -24,7 +24,7 @@ class _DrawerDemoState extends State<DrawerDemo> with TickerProviderStateMixin {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   static const List<String> _drawerContents = const <String>[
-    'ETH', 'eth', 'ETC', 'btc', 'erc20','\u20AC', '\$', '\u00A3', '\u2807',
+    'ETH', 'eth', 'etc', '\u039E', '\u0E3F','\u20AC', '\$', '\u00A3', '\u25C7', '\u2665'
   ];
 
   AnimationController _controller;
