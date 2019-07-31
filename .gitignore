@@ -29,6 +29,8 @@
 .pub/
 /build/
 
+pubspec.lock
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
@@ -81,4 +83,10 @@ gradlew
 gradlew.bat
 
 pubspec.lock
-
+pubspec.lock
+pubspec.lock
+.idea/libraries/Dart_Packages.xml
+.idea/libraries/Dart_SDK.xml
+.idea/libraries/Flutter_Plugins.xml
+.idea/misc.xml
+.idea/workspace.xml
