@@ -1059,14 +1059,19 @@ Widget _drawer(BuildContext context) {
                   MaterialPageRoute(builder: (context) => new SecondScreen()));
             }),
         new ListTile(
-            leading: const Icon(Icons.accessibility),
-            title: new Text('navigator x screen'),
-            onTap: () {
-              Navigator.push(
-                context,
-                new MaterialPageRoute(builder: (context) => new SecondScreen()),
-              );
-            }),
+              leading: const Icon(Icons.accessibility,
+              color: Colors.pinkAccent,),
+              trailing: const Icon(Icons.share,
+              color: Colors.pinkAccent,),
+              title: new Text('share this app',
+              style: TextStyle(color: Colors.yellowAccent),),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (context) => new ShareEthSync()),
+                );
+              }),
         new ListTile(
             leading: const Icon(Icons.accessibility),
             title: new Text('navigator x screen'),
