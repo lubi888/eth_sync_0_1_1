@@ -21,7 +21,7 @@ packages:
       name: camera
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.3"
+    version: "0.2.9+1"
   charcode:
     dependency: transitive
     description:
@@ -56,7 +56,7 @@ packages:
       name: fast_qr_reader_view
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.5"
   firebase_core:
     dependency: transitive
     description:
@@ -218,7 +218,7 @@ packages:
       name: url_launcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.3"
+    version: "5.1.1"
   vector_math:
     dependency: transitive
     description:
