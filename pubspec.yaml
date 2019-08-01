@@ -9,9 +9,10 @@ dependencies:
   cupertino_icons: ^0.1.2
   collection: '>=1.9.1'
   string_scanner: ^1.0.0
-  url_launcher: #3.0.0
+  url_launcher: ^5.1.0
   cloud_firestore: ^0.12.9
   qr_flutter: ^2.1.0+55
+  qrcode_reader: ^0.4.4
   camera: ^0.2.3
   path_provider: ^0.4.1
   video_player: ^0.6.4

@@ -299,7 +299,7 @@ class _EthSyncPageState extends State<EthSyncPage> {
                         Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => new CameraApp1()),
+                              builder: (context) => QRReader()),
                         );
                       },
                       child: new Text('Camera qr reader'),
@@ -1003,6 +1003,26 @@ Widget _drawer(BuildContext context) {
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => new QRMainScreen()));
+            }),
+        new ListTile(
+            leading: const Icon(
+              Icons.add_a_photo,
+              color: Colors.orangeAccent,
+            ),
+            title: new Text(
+              'capture eth|etc addresss',
+              style: new TextStyle(color: Colors.orangeAccent),
+            ),
+            subtitle: new Text(
+              'launch camera and take QR addresses',
+              style: new TextStyle(
+                  fontStyle: FontStyle.italic, color: Colors.blueAccent),
+            ),
+            trailing:
+                const Icon(Icons.camera_enhance, color: Colors.yellowAccent),
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => QRReader()));
             }),
         new ListTile(
           leading: const Icon(Icons.launch, color: Colors.greenAccent),
