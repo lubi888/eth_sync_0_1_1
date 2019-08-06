@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
-// import 'dart:async';
+import 'dart:async';
 import 'secondclass.dart';
 import 'firstclass.dart';
 import 'firebaseFlutt.dart';
@@ -16,6 +16,7 @@ import 'qr_mobile.dart';
 import 'shareEthSync.dart';
 import 'ethTxtStrings.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import './image_expand.dart';
 // import 'package:async/async.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
@@ -48,11 +49,12 @@ class EthSyncPage extends StatefulWidget {
 }
 
 class _EthSyncPageState extends State<EthSyncPage> {
-  String _kAsset0 = 'assets/devcon1.png';
-  String _kAsset1 = 'assets/ethBullet.png';
-  String _kAsset2 = 'assets/etcBullet.png';
-  String _kAsset3 = 'assets/ethGreenHelp.png';
-  String _kAsset4 = 'assets/duIcon.png';
+  final String _kAsset0 = 'assets/devcon1.png';
+  final String _kAsset2 = 'assets/etcBullet.png';
+  final String _kAsset3 = 'assets/ethGreenHelp.png';
+  final String _kAsset4 = 'assets/duIcon.png';
+  final String _kAsset5 = 'assets/gethTerm.png';
+  final String _kAsset6 = 'assets/geth1win.png';
   String bm = 'bit now';
   // String x_url = "";
   // var _kTransparentImage = 'assets/duIcon.png';
@@ -388,10 +390,66 @@ class _EthSyncPageState extends State<EthSyncPage> {
                       decoration: new BoxDecoration(
                         shape: BoxShape.circle,
                         image: new DecorationImage(
-                          image: new AssetImage(_kAsset1),
+                          image: new AssetImage(_kAsset2),
                         ),
                       ),
                     ),
+                    // FlatButton(
+                    //   child: Image.asset(_kAsset3),
+                    //   onPressed: () async {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) => EthsyncExpandImage(
+                    //                 // String assetFile: _kAsset3,
+                    //                 //  String imageUrl, heroTag, title;
+                    //                 //  imageUrl = "www.yahoo.com",
+                    //                 //  heroTag = "heroTag1",
+                    //                 image: _kAsset3,
+                    //                 title: "1st green page",
+                    //               )),
+                    //     );
+                    //   },
+                    // ),
+                    // FlatButton(
+                    //   child: Image.asset(_kAsset5),
+                    //   onPressed: () async {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) => EthsyncExpandImage(
+                    //                 image: _kAsset5,
+                    //                 title: "geth Terminator",
+                    //               )),
+                    //     );
+                    //   },
+                    // ),
+                    // FlatButton(
+                    //   child: Image.asset(_kAsset6),
+                    //   onPressed: () async {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) => EthsyncExpandImage(
+                    //                 image: _kAsset6,
+                    //                 title: "geth windows 10 cmdr",
+                    //               )),
+                    //     );
+                    //   },
+                    // ),
+                    // FlatButton(
+                    //   child: Image.asset(_kAsset0),
+                    //   onPressed: () async {
+                    //     Navigator.push(
+                    //       context,
+                    //       MaterialPageRoute(
+                    //           builder: (context) => EthsyncExpandImage(
+                    //                 image: _kAsset0,
+                    //                 title: "2st expander",
+                    //               )),
+                    //     );
+                    //   },
+                    // ),
                     new FlatButton(
 //                      padding: const EdgeInsets.only(top: 8.0),
                       child: new Image.network(
@@ -1059,19 +1117,24 @@ Widget _drawer(BuildContext context) {
                   MaterialPageRoute(builder: (context) => new SecondScreen()));
             }),
         new ListTile(
-              leading: const Icon(Icons.accessibility,
-              color: Colors.pinkAccent,),
-              trailing: const Icon(Icons.share,
-              color: Colors.pinkAccent,),
-              title: new Text('share this app',
-              style: TextStyle(color: Colors.yellowAccent),),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  new MaterialPageRoute(
-                      builder: (context) => new ShareEthSync()),
-                );
-              }),
+            leading: const Icon(
+              Icons.accessibility,
+              color: Colors.pinkAccent,
+            ),
+            trailing: const Icon(
+              Icons.share,
+              color: Colors.pinkAccent,
+            ),
+            title: new Text(
+              'share this app',
+              style: TextStyle(color: Colors.yellowAccent),
+            ),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (context) => new ShareEthSync()),
+              );
+            }),
         new ListTile(
             leading: const Icon(Icons.accessibility),
             title: new Text('navigator x screen'),
