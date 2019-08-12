@@ -17,6 +17,7 @@ import 'shareEthSync.dart';
 import 'ethTxtStrings.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import './image_expand.dart';
+import './oktoast.dart';
 // import 'package:async/async.dart';
 
 enum WhyFarther { harder, smarter, selfStarter, tradingCharter }
@@ -1142,6 +1143,16 @@ Widget _drawer(BuildContext context) {
               Navigator.push(
                 context,
                 new MaterialPageRoute(builder: (context) => new SecondScreen()),
+              );
+            }),
+        new ListTile(
+            leading: const Icon(Icons.accessibility),
+            title: new Text('oktoastie'),
+            onTap: () {
+              Navigator.push(
+                context,
+                new MaterialPageRoute(
+                    builder: (context) => new EthSyncOKToast()),
               );
             }),
       ],
